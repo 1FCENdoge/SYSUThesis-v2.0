@@ -1,0 +1,27 @@
+# Build and Release Folders
+*.xml
+*.nav
+*.snm
+*.aux
+*.bbl
+*.blg
+*.ent
+*.loa
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+# main.pdf
+# 当不需要将生成的pdf同步时，可删去上一行前的#号和空格
+*.synctex.gz
+
+# Other files and folders
+
+
+# Executables
+
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.

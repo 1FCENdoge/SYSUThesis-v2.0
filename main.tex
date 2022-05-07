@@ -1,0 +1,55 @@
+% 模板作者介绍
+% 作者：黄俊杰
+% 更新日期：2017-04-13
+% 修改者：欧一锋
+% 修改日期：2018-03-30
+% 修改者：黄汉宇(huanghy57, huanghydo@gmail.com)
+% 修改日期：2022-05-06
+%%
+\documentclass{sysuthesis}
+
+\input{docs/info}     % 论文相关信息
+\input{docs/abstract}     % 摘要内容
+\begin{document}
+    % 论文前置部分
+    \frontmatter
+        \pagenumbering{Roman}
+        \maketitle    % 封面
+        \makedisclaim       % 学术诚信声明
+        \makeabstract       % 中英文摘要
+        \maketableofcontents        % 目录
+%        \makelistoffiguretable		% 图表目录
+
+    % 论文主体部分
+    \mainmatter
+        % 引言
+
+        % 正文
+        \include{docs/chap01}
+        \newclearpage
+        \include{docs/chap02}
+        \newclearpage
+        \include{docs/chap03}
+        \newclearpage
+        \include{docs/chap04}
+        \newclearpage
+        \include{docs/chap05}
+        \newclearpage
+%        \include{docs/chap06}
+%        \newclearpage
+        % 结语
+
+    % 附录部分
+    \backmatter
+        % 参考文献. 因不需要纳入章节目录, 故放入附录部分
+        % 实际上参考文献是属于论文主体部分
+        \makereferences
+%		\bibliographystyle{bibtex-style/gbt7714-numerical}
+%		\bibliography{main}
+		
+%        \include{docs/ack}    % 致谢
+%        \newclearpage
+        % 附录
+%    \appendix
+%        \include{docs/appendix1}
+\end{document}
