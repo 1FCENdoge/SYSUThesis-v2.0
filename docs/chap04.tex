@@ -1,2 +1,53 @@
 \chapter{公式与表格的插入示例}
 \label{cha:for_tab_example}
+公式用于对论文基础理论的介绍，表格则是对一些不方便进行作图的数据进行展示。
+
+\section{公式的插入}
+\label{sec:formula}
+带左半边大括号的核反应方程式，如式(\ref{eqn:fusion_reactions})所示：
+\begin{equation}
+	\label{eqn:fusion_reactions}
+	\left\{
+	\begin{aligned}
+		&\mbox{D}+\mbox{D}\rightarrow \mbox{T}\,(\text{1.01}\;\mbox{MeV})+\mbox{p}\,(\text{3.03}\;\mbox{MeV}) \\
+		&\mbox{D}+\mbox{D}\rightarrow {^{\text{3}}}\mbox{He}\,(\text{0.82}\;\mbox{MeV})+\mbox{n}\,(\text{2.45}\;\mbox{MeV}) \\
+		&\mbox{D}+\mbox{T}\rightarrow \text{α}\,(\text{3.52}\;\mbox{MeV})+\mbox{n}\,(\text{14.06}\;\mbox{MeV}) \\
+		&\mbox{D}+{^{\text{3}}}\mbox{He}\rightarrow \text{α}\,(\text{3.67}\;\mbox{MeV})+\mbox{p}\,(\text{14.67}\;\mbox{MeV})
+	\end{aligned}
+	\right.
+\end{equation}
+
+狄拉克函数$\delta_{ij}$的表达式：
+\begin{equation}
+	\label{eqn:delta_ij}
+	\delta_{ij}=\left\{
+	\begin{aligned}
+		1&    &\mbox{if}&    &i=j \\
+		0&    &\mbox{if}&    &i\neq j
+	\end{aligned}
+	\right.
+\end{equation}
+
+一般的公式：
+\begin{equation}
+	\label{eqn:vec_v_cm}
+	\vec{v}_{cm}=\dfrac{m_{1}\vec{v}_{1}+m_{2}\vec{v}_{2}}{m_{1}+m_{2}}
+\end{equation}
+
+超长的公式：
+\begin{equation}
+	\label{eqn:iint_theta3_phi3}
+	\begin{split}
+		\int_{0}^{\pi}\int_{0}^{2\pi} \sin\theta_{3}&\dfrac{\exp(-\alpha v_{cm}^{2})}{v_{cm}}\sinh(\mu \gamma v_{r}v_{cm})\mbox{d}\phi_{3}\mbox{d}\theta_{3}=\dfrac{2\pi \sqrt{\pi}}{4\sqrt{\alpha}v_{3}u_{3}}\exp\left( \dfrac{(\mu \gamma v_{r})^{2}}{4\alpha} \right) \\
+		&\times \Bigg( \mbox{erf}\left( \dfrac{\mu \gamma v_{r}+2\alpha(v_{3}-u_{3})}{2\sqrt{\alpha}} \right)-\mbox{erf}\left( \dfrac{-\mu \gamma v_{r}+2\alpha(v_{3}-u_{3})}{2\sqrt{\alpha}} \right) \\
+		&+\mbox{erf}\left( \dfrac{-\mu \gamma v_{r}+2\alpha(v_{3}+u_{3})}{2\sqrt{\alpha}} \right)-\mbox{erf}\left( \dfrac{\mu \gamma v_{r}+2\alpha(v_{3}+u_{3})}{2\sqrt{\alpha}} \right) \Bigg)
+	\end{split}
+\end{equation}
+
+输入矩阵：
+\begin{equation}
+	\label{eqn:matrix}
+	\textbf{H} = \begin{bmatrix}
+		I*\mybold{x}_i \\ \textbf{h}
+	\end{bmatrix}
+\end{equation}
