@@ -14,6 +14,37 @@
 \label{sec:related_work}
 对国内外研究现状和相关领域中已有的研究成果的简要评述。
 
+\section{快速上手}
+\label{sec:latex_basic}
+本模板不会提及过多花里胡哨的操作，只追求使用者正确配置、快速上手使用LaTeX，拿到模板后即能专注于论文内容的撰写，不会纠结于配置以及其它有关代码的问题。下面介绍一种能成功配置的方法，是我使用的配置方法。
+
+以下操作步骤均在Windows 10/11操作系统中完成，不建议在Linux系统中操作，因为Linux系统会涉及额外的字体安装、配置等问题，并且本人实测，同样是texlive编译，同样的文件，同一台电脑安装Ubuntu 20.04.3/Windows 11双系统，在Windows 10/11中编译生成pdf更快。
+
+第一步，下载texlive并安装。建议从知名的开源镜像站下载安装包，如中科大开源镜像站（图 \ref{fig:ustc}）、清华大学开源镜像站（图 \ref{fig:tsinghua}）等，texlive一般在CTAN目录下（图 \ref{fig:texlive}），建议下载并安装2021及更新版本。
+\input{figure/chap01/ustc}
+\input{figure/chap01/tsinghua}
+\input{figure/chap01/texlive}
+
+第二步，安装CTAN宏包。在开始菜单中找到Tex Live command-line（图 \ref{fig:texlivecmd}），以管理员模式运行，依次运行以下两行命令：
+
+\noindent tlmgr option repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
+
+\noindent tlmgr update $ \text{-}\text{-} $self $ \text{-}\text{-} $all
+
+\noindent 等待CTAN宏包以及更新自动完成即可。
+\input{figure/chap01/texlivecmd}
+
+第三步，安装TeXstudio并配置。一般来说安装完成之后TeXstudio能自动识别已安装的texlive，打开TeXstudio，在上方找到Options->Configure TeXstudio并点击（图 \ref{fig:texstudio1}），在Build中将Default Compiler选为XeLaTeX，Default Bibliography Tool（默认参考文献工具）选为BibTeX（图 \ref{fig:texstudio2}）。
+\input{figure/chap01/texstudio1}
+\input{figure/chap01/texstudio2}
+
+第四步，编译生成pdf文档。用比较专业的语言说，就是先用XeLaTeX编译一次，再用BibTeX编译一次，再用XeLaTeX编译两次。具体操作为：用TeXstudio打开main.tex文件，点击上方绿色双箭头（Build \& View）（图 \ref{fig:f5}），点击Tools->Bibliography（图 \ref{fig:f8}），再点击两次绿色单箭头（Compile）（图 \ref{fig:f6}），就能生成正确的pdf文档。这个过程用快捷键操作就是F5->F8->F6->F6。这么做的具体原理在此处并不赘述，之后会附上参考资料。
+\input{figure/chap01/f5}
+\input{figure/chap01/f8}
+\input{figure/chap01/f6}
+
+综上，上述四个步骤的操作能让你在Windows 10/11+texlive+TeXstudio的环境下得到与github页面中内容一模一样的pdf文档。
+
 \section{本文的论文结构与章节安排}
 \label{sec:arrangement}
 本文共分为五章，各章节内容安排如下：

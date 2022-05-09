@@ -123,7 +123,7 @@
     %\fancyhead[R]{\zihao{-5}\leftmark}
 
     % 居中式页眉，可以选择为论文题目或当前章
-    \fancyhead[C]{\zihao{-5}中山大学专业硕士学位论文}
+    \fancyhead[C]{\zihao{-5}中山大学硕士学位论文}
     %\fancyhead[C]{\zihao{-5}\leftmark}
 }
 \pagestyle{plain}
