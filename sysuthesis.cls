@@ -23,21 +23,19 @@
 \RequirePackage{fontspec}
 \setmainfont{Times New Roman}
 
-%\RequirePackage[margin=1in,headsep=0.1in,headheight=1in]{geometry}
 \RequirePackage{fancyhdr}
-\RequirePackage{geometry}
-%\RequirePackage{fancyhdr}
+\RequirePackage[top=1in, bottom=1in, left=1.25in, right=1.25in, headsep=0.72cm, headheight=0.3in, footskip=0.79cm]{geometry}
 \RequirePackage{booktabs}
 \RequirePackage{calc}
 \RequirePackage{graphicx}
 \RequirePackage{svg}
-\RequirePackage[labelsep=space]{caption}
+\RequirePackage[labelsep=space, justification=centering]{caption}
+\RequirePackage{float}
 \RequirePackage[font=footnotesize]{subcaption}
 \RequirePackage{amsmath,amssymb,amsthm}
 \RequirePackage{listings}
 \RequirePackage{longtable}
 \RequirePackage[section]{placeins}
-\RequirePackage[chinese, onelanguage,linesnumbered,algochapter,ruled,vlined]{packages/algorithm2e}
 \RequirePackage{enumitem}
 \RequirePackage{bbm}
 \RequirePackage{bm}
@@ -53,14 +51,10 @@
 \RequirePackage{setspace}
 \RequirePackage{datetime}
 \RequirePackage{nth}
-\RequirePackage[justification=centering]{caption}
-\RequirePackage{float}
-
 % 引入调整段落整体宽度的宏包
 \RequirePackage{changepage}
+\RequirePackage{emptypage}
 
-% 设置页边距
-\geometry{top=1in,bottom=1in,left=1.25in,right=1.25in,headsep=0.72cm,headheight=0.3in,footskip=0.79cm}
 % Insert a TRUE blank page which has no header or footer
 \let\origdoublepage\cleardoublepage
 \newcommand{\clearemptydoublepage}{
@@ -461,7 +455,7 @@
 
 \renewcommand\backmatter{
     \@mainmatterfalse
-    \fancypagestyle{plain}{ }%\fancyhead[R]{\zihao{-5} \leftmark} }
+    \fancypagestyle{plain}{ }
     \pagestyle{plain}
 }
 
@@ -480,9 +474,9 @@
         }
 
         % 引用样式
-        \bibliographystyle{bibtex-style/gbt7714-2015-numerical}    % 国标文后参考文献著录规则
+        %\bibliographystyle{bibtex-style/gbt7714-2015-numerical}    % 国标文后参考文献著录规则
         %\bibliographystyle{ieeetr}
-        {\zihao{5}\rmfamily\bibliography{main}}    % 引用文献列表
+        %{\zihao{5}\rmfamily\bibliography{main}}
     \endgroup
 }
 

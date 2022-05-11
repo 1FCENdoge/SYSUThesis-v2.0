@@ -1,10 +1,5 @@
-% 模板作者介绍
-% 作者：黄俊杰
-% 更新日期：2017-04-13
-% 修改者：欧一锋
-% 修改日期：2018-03-30
-% 修改者：黄汉宇(huanghy57, huanghydo@gmail.com)
-% 修改日期：2022-05-06
+% 作者：黄汉宇(huanghy57, huanghydo@gmail.com)
+% 日期：2022-05-06
 %%
 \documentclass{sysuthesis}
 
@@ -15,7 +10,9 @@
     \frontmatter
         \pagenumbering{Roman}
         \maketitle    % 封面
-        \makedisclaim       % 学术诚信声明
+        \cleardoublepage
+        \makedisclaim
+        \cleardoublepage       % 学术诚信声明
         \makeabstract       % 中英文摘要
         \include{docs/symbols}
         \maketableofcontents        % 目录
@@ -45,14 +42,14 @@
 
     % 附录部分
     \backmatter
-        % 参考文献. 因不需要纳入章节目录, 故放入附录部分
-        % 实际上参考文献是属于论文主体部分
-        \makereferences
-%		\bibliographystyle{bibtex-style/gbt7714-numerical}
-%		\bibliography{main}
-		
-%        \include{docs/ack}    % 致谢
-%        \newclearpage
+    % 参考文献. 因不需要纳入章节目录, 故放入附录部分
+    % 实际上参考文献是属于论文主体部分
+    \makereferences
+    \bibliography{main}
+    \bibliographystyle{bibtex-style/gbt7714-2015-numerical}	
+    
+    \include{docs/ack}    % 致谢
+    \newclearpage
         % 附录
 %    \appendix
 %        \include{docs/appendix1}
