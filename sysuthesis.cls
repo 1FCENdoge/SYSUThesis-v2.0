@@ -371,12 +371,6 @@
     \tableofcontents
     \newclearpage
 }
-\newcommand\makelistoffiguretable{
-    \listoffigures
-    \listoftables
-    \thispagestyle{listoffiguretable}
-    \newclearpage
-}
 
 \renewcommand\mainmatter{
     \@mainmattertrue
@@ -468,8 +462,8 @@
     \ctexset {
         chapter = {
             format = {\centering},
-            nameformat = {\zihao{4}\heiti},
-            titleformat = {\zihao{4}\heiti},
+            nameformat = {\zihao{-2}\heiti},
+            titleformat = {\zihao{-2}\heiti},
         },
         section = {
             format = {\centering},
@@ -488,7 +482,6 @@
 % 配置超链接。
 % hyperref一般要求是导言区最后一个宏包，才能正常工作
 % 若把该宏包提前，则会引起附录列表跳转到第一章的问题
-% TODO: 重构宏包引入顺序以让代码语义聚集
 \RequirePackage[hidelinks, hyperfootnotes=true]{hyperref}
 \RequirePackage{footnotebackref}
 

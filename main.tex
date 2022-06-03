@@ -6,53 +6,48 @@
 \input{docs/info}     % 论文相关信息
 \input{docs/abstract}     % 摘要内容
 \begin{document}
-    % 论文前置部分
-    \frontmatter
-        \pagenumbering{Roman}
-        \maketitle    % 封面
-        \cleardoublepage
-        \makedisclaim    % 学术诚信声明
-        \cleardoublepage
-        \makeabstract       % 中英文摘要
-        \include{docs/symbols}
-        \maketableofcontents        % 目录
-%        \makelistoffiguretable		% 图表目录
-		\cleardoublepage
+% 论文前置部分
+\frontmatter
+\pagenumbering{Roman}
+\maketitle    % 封面
+\cleardoublepage
+\makedisclaim    % 学术诚信声明
+\cleardoublepage
+\makeabstract       % 中英文摘要
+\maketableofcontents        % 目录
+\cleardoublepage
 
-    % 论文主体部分
-    \mainmatter
-        % 引言
-
-        % 正文
+% 论文主体部分
+\mainmatter
+% 正文
 % 硕士学位论文一般有5章或6章即可，博士学位论文一般有6章或7章
-        \include{docs/chap01}
-        \newclearpage
-        \include{docs/chap02}
-        \newclearpage
-        \include{docs/chap03}
-        \newclearpage
-        \include{docs/chap04}
-        \newclearpage
-        \include{docs/chap05}
-        \newclearpage
-%        \include{docs/chap06}
-%        \newclearpage
-%        \include{docs/chap07}
-%        \newclearpage
-        % 结语
+\include{docs/chap01}
+\newclearpage
+\include{docs/chap02}
+\newclearpage
+\include{docs/chap03}
+\newclearpage
+\include{docs/chap04}
+\newclearpage
+\include{docs/chap05}
+\newclearpage
+%\include{docs/chap06}
+%\newclearpage
+%\include{docs/chap07}
+%\newclearpage
 
-    % 附录部分
-    \backmatter
-    % 参考文献. 因不需要纳入章节目录, 故放入附录部分
-    % 实际上参考文献是属于论文主体部分
-    \makereferences
-    \setlength{\bibsep}{0em}
-    \bibliography{reference}
-    \bibliographystyle{bibtex-style/gbt7714-2015-numerical}	
-    
-    \include{docs/ack}    % 致谢
-    \newclearpage
-        % 附录
-%    \appendix
-%        \include{docs/appendix1}
+% 附录部分
+\backmatter
+% 参考文献. 因不需要纳入章节目录, 故放入附录部分
+% 实际上参考文献是属于论文主体部分
+\makereferences
+\setlength{\bibsep}{0em}
+\bibliography{reference}
+\bibliographystyle{bibtex-style/gbt7714-2015-numerical}	
+% 附录
+\appendix
+\include{docs/appendix1}
+% 致谢
+\include{docs/ack}
+\newclearpage
 \end{document}
