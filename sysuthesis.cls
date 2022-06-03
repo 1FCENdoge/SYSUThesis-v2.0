@@ -17,7 +17,6 @@
 ]{ctexbook}
 
 \def\@printtwoside{0} % 设置文章为电子版格式（不添加多余空白页）
-%\def\@printtwoside{1} % 设置文章为双面打印格式（添加多余空白页保证每个表格、章节开头为奇数页面）
 
 % 配置英文字体
 \RequirePackage{fontspec}
@@ -110,29 +109,16 @@
 % 默认页面页眉页脚样式
 \fancypagestyle{plain}{
     \fancyhf{}
-    \fancyfoot[C]{\zihao{-5}\thepage} % 页码位于页脚居中
-
-    % 左右两栏页眉，左为论文题目右为当前章
-    %\fancyhead[L]{\zihao{-5}\@ctitle}
-    %\fancyhead[R]{\zihao{-5}\leftmark}
-
-    % 居中式页眉，可以选择为论文题目或当前章
+    % 页码位于页脚居中
+    \fancyfoot[C]{\zihao{-5}\thepage}
+    % 居中式页眉，内容为中山大学硕士/博士学位论文
     \fancyhead[C]{\zihao{-5}中山大学硕士学位论文}
-    %\fancyhead[C]{\zihao{-5}\leftmark}
 }
 \pagestyle{plain}
 
 % 中英文摘要页面样式
-\fancypagestyle{cAbstract}{
-%    \fancyhead[L]{\zihao{-5}\@ctitle}
-%    \fancyhead[R]{\zihao{-5}摘要}
-}
-\fancypagestyle{eAbstract}{
-%    \fancyhead[L]{\zihao{-5}\@etitle}
-%    \fancyhead[R]{\zihao{-5}ABSTRACT}
-}
-
-%\fancypagestyle{listoffiguretable}{\fancyhead[R]{\zihao{-5}插图与表格目录}}
+\fancypagestyle{cAbstract}{}
+\fancypagestyle{eAbstract}{}
 
 % 表格与图片标题设定
 \renewcommand{\thefigure}{\thechapter-\arabic{figure}}
@@ -163,16 +149,6 @@
 \renewcommand{\cftsubsecfont}{\zihao{-4}\songti}
 \renewcommand{\cftsubsecpagefont}{\zihao{-4}\songti}
 \setlength{\cftsecindent}{2.3em}        % 小节缩进, 对齐章标题空隙
-
-% 插图目录
-%\renewcommand{\listfigurename}{插图目录}
-%\renewcommand{\cftfigfont}{\zihao{-4}\songti}
-%\renewcommand{\cftfigpagefont}{\zihao{-4}\songti}
-
-% 表格目录
-%\renewcommand{\listtablename}{表格目录}
-%\renewcommand{\cfttabfont}{\zihao{-4}\songti}
-%\renewcommand{\cfttabpagefont}{\zihao{-4}\songti}
 
 \renewcommand{\cftaftertoctitle}{\hfill}
 \renewcommand{\cftafterlottitle}{\hfill}
@@ -207,21 +183,14 @@
     \popQED\endtrivlist\@endpefalse
 }
 
-% 参考文献引用标记格式：右上角，带方括号
-\RequirePackage[comma,square,super]{natbib}
-
 % 相关信息宏定义
 \newcommand\ctitle[1]{\def\@ctitle{#1}}
 \newcommand\etitle[1]{\def\@etitle{#1}}
 \newcommand\covertitlefirst[1]{\def\@covertitlefirst{#1}}
 \newcommand\covertitlesecond[1]{\def\@covertitlesecond{#1}}
 \newcommand\covertitlethird[1]{\def\@covertitlethird{#1}}
-%\newcommand\eabstracttitlefirst[1]{\def\@eabstracttitlefirst{#1}} % 解决英文摘要页标题过长问题 (Issue 49&63)
-%\newcommand\eabstracttitlesecond[1]{\def\@eabstracttitlesecond{#1}}
 \newcommand\cauthor[1]{\def\@cauthor{#1}} % 默认中文名为封面作者名字
 \newcommand\eauthor[1]{\def\@eauthor{#1}}
-%\newcommand\studentid[1]{\def\@studentid{#1}}
-%\newcommand\cschool[1]{\def\@cschool{#1}}
 \newcommand\cmajor[1]{\def\@cmajor{#1}}
 \newcommand\emajor[1]{\def\@emajor{#1}}
 \newcommand\cmentor[1]{\def\@cmentor{#1}}
@@ -460,7 +429,9 @@
 }
 
 % 参考文献
-% 标题小五号黑体加冒号
+% 参考文献引用标记格式：右上角，带方括号
+\RequirePackage[comma,square,super]{natbib}
+% 标题与正文章节标题相同
 % 内容小五号宋体
 \newcommand\makereferences{
     \begingroup
