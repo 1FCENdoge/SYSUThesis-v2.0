@@ -23,7 +23,7 @@
 \setmainfont{Times New Roman}
 
 \RequirePackage{fancyhdr}
-\RequirePackage[top=1in, bottom=1in, left=1.25in, right=1.25in, headsep=0.72cm, headheight=0.3in, footskip=0.79cm]{geometry}
+\RequirePackage[top=1in, bottom=1in, left=1.25in, right=1.25in, headsep=0.2in, headheight=0.532cm, footskip=0.79cm]{geometry}
 \RequirePackage{booktabs}
 \RequirePackage{calc}
 \RequirePackage{graphicx}
@@ -102,7 +102,7 @@
 \setlist[description]{nosep}
 
 % 页眉、页脚、脚注设定
-\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
 \renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
 % 采用带圈数字符号代替*号脚注
