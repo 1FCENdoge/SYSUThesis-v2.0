@@ -53,6 +53,7 @@
 % 引入调整段落整体宽度的宏包
 \RequirePackage{changepage}
 \RequirePackage{emptypage}
+\RequirePackage{ulem}
 
 % Insert a TRUE blank page which has no header or footer
 \let\origdoublepage\cleardoublepage

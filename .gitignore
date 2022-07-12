@@ -12,9 +12,9 @@
 *.lot
 *.out
 *.toc
+*.synctex.gz
 # main.pdf
 # 当不需要将生成的pdf同步时，可删去上一行前的#号和空格
-*.synctex.gz
 
 # Other files and folders
 
