@@ -390,23 +390,23 @@
             beforeskip = {13pt},
             afterskip = {13pt},
             format = {},
-            nameformat = {\zihao{-3}\heiti},
-            titleformat = {\zihao{-3}\heiti}
+            nameformat = {\zihao{-3}\songti\bfseries},
+            titleformat = {\zihao{-3}\songti\bfseries}
         },
         subsection = {
             %fixskip = true,
             beforeskip = {10pt},
             afterskip = {10pt},
             format = {},
-            nameformat = {\zihao{-4}\heiti},
-            titleformat = {\zihao{-4}\heiti}
+            nameformat = {\zihao{-4}\songti\bfseries},
+            titleformat = {\zihao{-4}\songti\bfseries}
         },
         subsubsection = {
             beforeskip = {10pt},
             afterskip = {10pt},
             format = {},
-            nameformat = {\zihao{-4}\heiti},
-            titleformat = {\zihao{-4}\heiti}
+            nameformat = {\zihao{-4}\songti\bfseries},
+            titleformat = {\zihao{-4}\songti\bfseries}
             % 按照中大规定的格式需要显示成a.b.c.d章，而不是(d)节
             % number = {(\arabic{subsubsection})}
         }
@@ -438,11 +438,6 @@
                 titleformat = {\zihao{-2}\heiti}
             }
         }
-
-        % 引用样式
-        %\bibliographystyle{bibtex-style/gbt7714-2015-numerical}    % 国标文后参考文献著录规则
-        %\bibliographystyle{ieeetr}
-        %{\zihao{5}\rmfamily\bibliography{main}}
     \endgroup
 }
 
