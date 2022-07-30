@@ -1,0 +1,21 @@
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+% 上面一行的命令只需要在第一个需要拆分/合并单元格的表格中出现即可
+\begin{table}[h]
+	\renewcommand\arraystretch{1.5}
+	\centering
+	\caption{较为复杂的表格（涉及单元格的合并与拆分）}
+	\begin{tabular}{*{5}{c}}
+		\toprule
+		区域 & \tabincell{c}{外侧核热功率\\（MW）} & \tabincell{c}{内侧核热功率\\（MW）} & 结构 & \tabincell{c}{结构核热功率\\（MW）} \\
+		\midrule
+		第一壁涂层 & 20.0 & 13.4 & \multirow{2}{*}{第一壁} & \multirow{2}{*}{151.7} \\
+		第一壁结构层 & 70.2 & 48.1 & ~ & ~ \\
+		\midrule
+		Be-1区 & 37.9 & 26.5 & \multirow{4}{*}{氚增殖区} & \multirow{4}{*}{736.2} \\ 
+		Li$ _{\text{4}} $SiO$ _{\text{4}} $-1区 & 126.7 & 86.8 & ~ & ~ \\
+		Be-2区 & 133.6 & 94.1 & ~ & ~ \\
+		Li$ _{\text{4}} $SiO$ _{\text{4}} $-2区 & 134.4 & 96.2 & ~ & ~ \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:chap05_nucheat_tot}
+\end{table}

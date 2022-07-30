@@ -390,23 +390,29 @@
             beforeskip = {13pt},
             afterskip = {13pt},
             format = {},
-            nameformat = {\zihao{-3}\songti\bfseries},
-            titleformat = {\zihao{-3}\songti\bfseries}
+%            nameformat = {\zihao{-3}\songti\bfseries},
+%            titleformat = {\zihao{-3}\songti\bfseries}
+            nameformat = {\zihao{-3}\heiti},
+            titleformat = {\zihao{-3}\heiti}
         },
         subsection = {
             %fixskip = true,
             beforeskip = {10pt},
             afterskip = {10pt},
             format = {},
-            nameformat = {\zihao{-4}\songti\bfseries},
-            titleformat = {\zihao{-4}\songti\bfseries}
+%            nameformat = {\zihao{-4}\songti\bfseries},
+%            titleformat = {\zihao{-4}\songti\bfseries}
+            nameformat = {\zihao{-4}\heiti},
+            titleformat = {\zihao{-4}\heiti}
         },
         subsubsection = {
             beforeskip = {10pt},
             afterskip = {10pt},
             format = {},
-            nameformat = {\zihao{-4}\songti\bfseries},
-            titleformat = {\zihao{-4}\songti\bfseries}
+%            nameformat = {\zihao{-4}\songti\bfseries},
+%            titleformat = {\zihao{-4}\songti\bfseries}
+            nameformat = {\zihao{-4}\heiti},
+            titleformat = {\zihao{-4}\heiti}
             % 按照中大规定的格式需要显示成a.b.c.d章，而不是(d)节
             % number = {(\arabic{subsubsection})}
         }
@@ -438,6 +444,11 @@
                 titleformat = {\zihao{-2}\heiti}
             }
         }
+    % 每一个引用之间不添加多余间距
+    \setlength{\bibsep}{0em}
+    % 引用样式
+    \bibliographystyle{bibtex-style/gbt7714-2015-numerical}
+    {\zihao{5}\rmfamily\songti\bibliography{reference}}    % 引用文献列表
     \endgroup
 }
 
@@ -463,13 +474,13 @@
         },
         section = {
             format = {\centering},
-            nameformat = {\zihao{4}\heiti},
-            titleformat = {\zihao{4}\heiti}
+            nameformat = {\zihao{-3}\heiti},
+            titleformat = {\zihao{-3}\heiti}
         },
         subsection = {
             format = {\centering},
-            nameformat = {\zihao{4}\heiti},
-            titleformat = {\zihao{4}\heiti}
+            nameformat = {\zihao{-4}\heiti},
+            titleformat = {\zihao{-4}\heiti}
         }
     }
 }
