@@ -268,7 +268,8 @@
 \newcommand\makedisclaim{
     \ctexset {
         chapter = {
-            titleformat = {\zihao{-2}\fangsong\bfseries},
+%            titleformat = {\zihao{-2}\fangsong\bfseries},
+			titleformat = {\zihao{-2}\heiti},
             beforeskip = {10pt},
             afterskip = {30pt}
         }
