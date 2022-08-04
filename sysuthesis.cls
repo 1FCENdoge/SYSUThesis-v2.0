@@ -453,6 +453,36 @@
     \endgroup
 }
 
+\newcommand\Nchapter[1]{%
+	\if@mainmatter%
+	\@mainmatterfalse%
+	\chapter{#1}%
+	\@mainmattertrue%
+	\else
+	\chapter{#1}%
+	\fi}
+\def\SYSU@label@publications{发表文章目录}
+\newenvironment{publications}[1]
+{\heiti\Nchapter{\SYSU@label@publications}%
+	\@mkboth{\MakeUppercase\SYSU@label@publications}
+	{\MakeUppercase\SYSU@label@publications}%
+	\list{\@biblabel{\@arabic\c@enumiv}}%
+	{\settowidth\labelwidth{\@biblabel{#1}}%
+		\leftmargin\labelwidth
+		\advance\leftmargin\labelsep
+		\@openbib@code
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
+	\sloppy
+	\clubpenalty4000
+	\@clubpenalty \clubpenalty
+	\widowpenalty4000%
+	\sfcode`\.\@m}
+{\def\@noitemerr
+	{\@latex@warning{Empty `publications' environment}}%
+	\endlist}
+
 % 附录样式
 \renewcommand\appendix{\par
     \@mainmattertrue
