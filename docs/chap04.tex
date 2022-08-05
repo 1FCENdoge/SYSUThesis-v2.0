@@ -1,4 +1,4 @@
-\chapter{公式与表格的插入示例}
+\chapter{公式、表格与代码的插入示例}
 \label{cha:for_tab_example}
 公式用于对论文基础理论的介绍，表格则是对一些不方便进行作图的数据进行展示。
 
@@ -63,3 +63,20 @@
 
 较为复杂的表格：
 \input{table/chap04_nucheat_tot}
+
+\section{代码的插入}
+\label{sec:code}
+本模版支持在论文中插入代码片段，或直接从源码文件进行插入。例如，在论文中插入代码片段的效果为：
+\begin{python}
+def func():
+print("hello world")
+with open('./output.txt', 'w') as f:
+L = f.readlines()
+	
+if __name__ == "__main__":
+# this is a comment line
+func()
+\end{python}
+也可在行内插入代码片段，例如：Python中重载加法运算符的函数为\pyinline{__add__}，类的标识符为\pyinline{class}。
+此外，还可直接插入代码文件，例如插入\texttt{./code/demo.cpp}的效果为：
+\lstinputlisting[style=sysucpp]{code/demo.cpp}
