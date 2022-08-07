@@ -445,11 +445,6 @@
                 titleformat = {\zihao{-2}\heiti}
             }
         }
-    % 每一个引用之间不添加多余间距
-    \setlength{\bibsep}{0em}
-    % 引用样式
-    \bibliographystyle{bibtex-style/gbt7714-2015-numerical}
-    {\zihao{5}\rmfamily\songti\bibliography{reference}}    % 引用文献列表
     \endgroup
 }
 
@@ -461,7 +456,7 @@
 	\else
 	\chapter{#1}%
 	\fi}
-\def\SYSU@label@publications{发表文章目录}
+\def\SYSU@label@publications{攻读硕士学位期间取得的研究成果}
 \newenvironment{publications}[1]
 {\heiti\Nchapter{\SYSU@label@publications}%
 	\@mkboth{\MakeUppercase\SYSU@label@publications}

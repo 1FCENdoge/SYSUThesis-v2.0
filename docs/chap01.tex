@@ -26,8 +26,12 @@
 \input{figure/chap01/texlive}
 
 第二步，安装CTAN宏包。在开始菜单中找到Tex Live command-line（图 \ref{fig:texlivecmd}），以管理员模式运行，依次运行以下两行命令：
-\lstinputlisting[style=sysucpp]{code/cmd.txt}
-等待CTAN宏包以及更新自动完成即可。
+
+\noindent tlmgr option repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
+
+\noindent tlmgr update $ \text{-}\text{-} $self $ \text{-}\text{-} $all
+
+\noindent 等待CTAN宏包以及更新自动完成即可。
 \input{figure/chap01/texlivecmd}
 
 第三步，安装TeXstudio并配置。一般来说安装完成之后TeXstudio能自动识别已安装的texlive，打开TeXstudio，在上方找到Options $\rightarrow$ Configure TeXstudio并点击（图 \ref{fig:texstudio1}），在Build中将Default Compiler选为XeLaTeX，Default Bibliography Tool（默认参考文献工具）选为BibTeX（图 \ref{fig:texstudio2}）。
