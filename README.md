@@ -9,6 +9,7 @@
 tlmgr option repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
 tlmgr update --self --all
 ```
+等待CTAN宏包更新自动完成即可，这个步骤也会在`main.pdf`中提到。
 
 ## 相关规范
 [中山大学研究生学位论文格式要求](http://graduate.sysu.edu.cn/rules)
