@@ -26,10 +26,9 @@ tlmgr update --self --all
 1. 感谢 C. SHAO和 Y. YANG同学为本模板提供参考示例
 1. 感谢[@chunkwong](https://github.com/chungkwong)师兄在Github上放出了中大第一个[非官方的本科论文LaTex模板](https://github.com/chungkwong/sysu_thesis)
 1. 感谢[@guanyingc](https://github.com/guanyingc)师兄在模板结构化分解上作出了[极大的贡献](https://github.com/guanyingc/SYSU-LaTex-Thesis)
-1. 感谢@huangjj27师兄在模板样式规范化做出极大的贡献，感谢
-1. 感谢@a20185 @Kinpzz @yttty @perqin @noeagles 等人[对v4.6.0作出极大的贡献](https://gitlab.com/sysu-gitlab/latex-group/thesis/merge_requests/32)
+1. 感谢@huangjj27师兄在模板样式规范化做出极大的贡献
+1. 感谢@a20185 @Kinpzz @yttty @perqin @noeagles 等人[作出的极大的贡献](https://gitlab.com/sysu-gitlab/latex-group/thesis/merge_requests/32)
 1. 感谢@the-1000th-summer [提供2020年本科毕业论文封面](https://gitlab.com/sysu-gitlab/latex-group/thesis/-/merge_requests/39)
-1. PPT的模板源自<http://far.tooold.cn/post/latex/beamertsinghua>
 1. 最后, 感谢Donald Ervin Knuth教授发明了`tex`这么好(zhe)用(teng)的工具
 
 ## 错误反馈以及改进
