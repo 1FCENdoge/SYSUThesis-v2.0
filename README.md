@@ -23,7 +23,7 @@ tlmgr update --self --all
 1. 感谢[@GaëlCHEN](https://github.com/GaelCHEN)为本项目提交代码以及参与本项目的后续维护
 1. 感谢[@Immortalyzy](https://github.com/Immortalyzy)为本项目提供了一定的技术支持
 1. 感谢[@Zeping Lee](https://github.com/zepinglee)提供的[GB/T7714-2015的引用格式的.bst文件](https://github.com/zepinglee/gbt7714-bibtex-style)
-1. 感谢 C. SHAO和 Y. YANG同学为本模板提供参考示例
+1. 感谢[@Changkun Shao](https://github.com/ShaoChangk)和 Y. YANG同学为本模板提供参考示例
 1. 感谢[@chunkwong](https://github.com/chungkwong)师兄在Github上放出了中大第一个[非官方的本科论文LaTex模板](https://github.com/chungkwong/sysu_thesis)
 1. 感谢[@guanyingc](https://github.com/guanyingc)师兄在模板结构化分解上作出了[极大的贡献](https://github.com/guanyingc/SYSU-LaTex-Thesis)
 1. 感谢@huangjj27师兄在模板样式规范化做出极大的贡献
