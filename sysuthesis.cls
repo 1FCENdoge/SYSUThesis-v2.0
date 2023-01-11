@@ -204,53 +204,43 @@
 \renewcommand\maketitle {
     \begin{titlepage}
         \begin{center}
-            \includegraphics[width=10cm]{image/SYSULogo} \\
-            \songti
+            % \includegraphics[width=10cm]{image/SYSULogo} \\
+            % \songti
             \vspace{\baselineskip}
             \zihao{1}{中山大学硕士学位论文} \\
-            \vspace{1\baselineskip}
+            \vspace{2\baselineskip}
 
             {\fontsize{12}{10}\selectfont
             \begin{tabular}{l}
-            	\hfill\zihao{3}\songti\bfseries\@covertitlefirst\hfill\\\vspace{1pt}\\
-            	\hfill\zihao{3}\songti\textbf{\@covertitlesecond}\hfill\\\vspace{1pt}\\
-            	\hfill\zihao{3}\songti\textbf{\@covertitlethird}\hfill\\\vspace{20pt}\\
+            	\hfill\zihao{3}\bfseries\@covertitlefirst\hfill\\\vspace{1pt}\\
+            	\hfill\zihao{3}\@covertitlesecond\hfill\\\vspace{1pt}\\
+            	\hfill\zihao{3}\@covertitlethird\hfill\\\vspace{20pt}\\
             \end{tabular}
-        	\begin{tabular}{l}
-        		\zihao{4}{专业：}\@cmajor\\\vspace{4pt} \\
-        		\zihao{4}{学位申请人：}\@cauthor\\\vspace{4pt} \\
-        		\zihao{4}{指导教师：}\@cmentor\\\vspace{1pt} \\
+        	
+            \vspace{3.5\baselineskip}
+
+            \begin{tabular}{ll}
+                {\makebox[3cm][s]{\zihao{4}\textbf{专 \hfill 业 \hfill 名 \hfill 称：}}} & \zihao{4}\@cmajor \\ [-1ex] \\
+                {\makebox[3cm][s]{\zihao{4}\textbf{学 \hfill 位 \hfill 申 \hfill 请 \hfill 人：}}}& \zihao{4}\@cauthor \\ [-1ex] \\
+                {\makebox[3cm][s]{\zihao{4}\textbf{指 \hfill 导 \hfill 教 \hfill 师：}}} & \zihao{4}\@cmentor \\ 
             \end{tabular}
             }
-        	\vspace{15pt}
-%			\vspace{1\baselineskip}
-			
-   		 	\setlength{\@title@width}{6cm}
-   		 	{\zihao{4}\songti{
-   		 	\begin{tabular}{c}
-     				论文答辩委员会主席:\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \\
-     				
-     				%\vspace{12pt}
-     				\underline{\makebox[\@title@width][c]{~}} \\
-     				%\vspace{12pt}
-     				论文答辩委员会成员:\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \\
-     				%\vspace{12pt}
-   
-     				\underline{\makebox[\@title@width][c]{~}} \\
-     				~\\
-     				\underline{\makebox[\@title@width][c]{~}}\\
-     				~\\
-     				\underline{\makebox[\@title@width][c]{~}}\\
-     				~\\
-     				\underline{\makebox[\@title@width][c]{~}}\\
-   				\end{tabular}}	% 不加粗
-%				\hspace{24pt}论文答辩委员会主席:
-  		    }
+
+        	\vspace{3\baselineskip}
+
+            \zihao{4}{
+   		 	\begin{tabular}{rr}
+	        	论文答辩委员会主席： & \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
+	        	成员：& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
+	        	{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
+	        	{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}
+	        \end{tabular}
+            }
             \vfill
 
-            \zihao{-5}
+            \zihao{-3}
             {\centering
-            	{二〇二二年五月}
+            	{\qquad 年 \qquad 月 \qquad 日} % 答辩时手签
 %                \ctexset{today=big}         % 汉字数字形式日期
 %                \today     \\ % 使用最后一次编译的日期, 实现日期的自动化
                 % Date:\hspace{0.5\ccwd} Month\hspace{2\ccwd} Day\hspace{1\ccwd} Year
