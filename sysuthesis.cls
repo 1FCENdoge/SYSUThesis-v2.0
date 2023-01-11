@@ -140,6 +140,9 @@
 \renewcommand{\cftlottitlefont}{\hfill\zihao{-3}\heiti}
 \renewcommand{\cftloftitlefont}{\hfill\zihao{-3}\heiti}
 
+% 目录两个字中间增加空格
+\renewcommand\contentsname{\centerline{目\hspace{0.5em}录}}
+
 % 目录中章节标题：小四号宋体
 \renewcommand{\cftchapfont}{\zihao{-4}\songti}
 \renewcommand{\cftchappagefont}{\zihao{-4}\songti}
