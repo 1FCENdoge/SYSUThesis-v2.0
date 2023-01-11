@@ -135,14 +135,14 @@
 % 如果要在目录中显示子章节请换用下面这行(目录中显示到x.y.z章)，如果不用这行默认显示到x.y章。
 % \setcounter{tocdepth}{2}
 
-% 目录标题：3号宋体加粗
-\renewcommand{\cfttoctitlefont}{\hfill\zihao{3}\songti\bfseries}
-\renewcommand{\cftlottitlefont}{\hfill\zihao{3}\songti\bfseries}
-\renewcommand{\cftloftitlefont}{\hfill\zihao{3}\songti\bfseries}
+% 目录标题：小三号黑体
+\renewcommand{\cfttoctitlefont}{\hfill\zihao{-3}\heiti}
+\renewcommand{\cftlottitlefont}{\hfill\zihao{-3}\heiti}
+\renewcommand{\cftloftitlefont}{\hfill\zihao{-3}\heiti}
 
-% 目录中章节标题：四号黑体
-\renewcommand{\cftchapfont}{\zihao{4}\heiti}
-\renewcommand{\cftchappagefont}{\zihao{4}\heiti}
+% 目录中章节标题：小四号宋体
+\renewcommand{\cftchapfont}{\zihao{-4}\songti}
+\renewcommand{\cftchappagefont}{\zihao{-4}\songti}
 
 % 目录中其他内容：小四号宋体
 \renewcommand{\cftsecfont}{\zihao{-4}\songti}
