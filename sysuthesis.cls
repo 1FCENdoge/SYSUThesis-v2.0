@@ -135,16 +135,22 @@
 % 如果要在目录中显示子章节请换用下面这行(目录中显示到x.y.z章)，如果不用这行默认显示到x.y章。
 % \setcounter{tocdepth}{2}
 
-% 目录标题：3号宋体加粗
-\renewcommand{\cfttoctitlefont}{\hfill\zihao{3}\songti\bfseries}
-\renewcommand{\cftlottitlefont}{\hfill\zihao{3}\songti\bfseries}
-\renewcommand{\cftloftitlefont}{\hfill\zihao{3}\songti\bfseries}
+% 目录标题：小三号黑体
+\renewcommand{\cfttoctitlefont}{\hfill\zihao{-3}\heiti}
+\renewcommand{\cftlottitlefont}{\hfill\zihao{-3}\heiti}
+\renewcommand{\cftloftitlefont}{\hfill\zihao{-3}\heiti}
 
-% 目录中章节标题：四号黑体
-\renewcommand{\cftchapfont}{\zihao{4}\heiti}
-\renewcommand{\cftchappagefont}{\zihao{4}\heiti}
+% 目录两个字中间增加空格
+\renewcommand\contentsname{\centerline{目\hspace{2em}录}}
 
-% 目录中其他内容：小四号宋体
+% 目录中的内容：小四号宋体
+% 目录中章节标题
+\renewcommand{\cftchapfont}{\zihao{-4}\songti}
+\renewcommand{\cftchappagefont}{\zihao{-4}\songti}
+% \renewcommand{\cftchapfont}{\zihao{4}\heiti}
+% \renewcommand{\cftchappagefont}{\zihao{4}\heiti}
+
+% 目录中其他内容
 \renewcommand{\cftsecfont}{\zihao{-4}\songti}
 \renewcommand{\cftsecpagefont}{\zihao{-4}\songti}
 \renewcommand{\cftsubsecfont}{\zihao{-4}\songti}
@@ -155,6 +161,8 @@
 \renewcommand{\cftafterlottitle}{\hfill}
 \renewcommand{\cftafterloftitle}{\hfill}
 \renewcommand{\cftnodots}{\cftdotsep}     % 使用点指示页数
+\renewcommand{\cftchapleader}{\cftdotfill{0.1}}   % 调整指引线间距
+\renewcommand{\cftsecleader}{\cftdotfill{0.1}}
 
 \addtolength{\cftchapnumwidth}{3\ccwd}
 \newcommand\mybold[1]{\textit{\textbf{#1}}}
@@ -203,47 +211,69 @@
     \begin{titlepage}
         \begin{center}
             \includegraphics[width=10cm]{image/SYSULogo} \\
-            \songti
+            %\songti
             \vspace{\baselineskip}
             \zihao{1}{中山大学硕士学位论文} \\
             \vspace{1\baselineskip}
 
             {\fontsize{12}{10}\selectfont
             \begin{tabular}{l}
-            	\hfill\zihao{3}\songti\bfseries\@covertitlefirst\hfill\\\vspace{1pt}\\
-            	\hfill\zihao{3}\songti\textbf{\@covertitlesecond}\hfill\\\vspace{1pt}\\
-            	\hfill\zihao{3}\songti\textbf{\@covertitlethird}\hfill\\\vspace{20pt}\\
+            	%\hfill\zihao{3}\songti\bfseries\@covertitlefirst\hfill\\\vspace{1pt}\\
+            	%\hfill\zihao{3}\songti\textbf{\@covertitlesecond}\hfill\\\vspace{1pt}\\
+            	%\hfill\zihao{3}\songti\textbf{\@covertitlethird}\hfill\\\vspace{20pt}\\
+            	\hfill\zihao{3}\bfseries\@covertitlefirst\hfill\\\vspace{1pt}\\
+            	\hfill\zihao{3}\@covertitlesecond\hfill\\\vspace{1pt}\\
+            	\hfill\zihao{3}\@covertitlethird\hfill\\\vspace{20pt}\\
             \end{tabular}
-        	\begin{tabular}{l}
-        		\zihao{4}{专业：}\@cmajor\\\vspace{4pt} \\
-        		\zihao{4}{学位申请人：}\@cauthor\\\vspace{4pt} \\
-        		\zihao{4}{指导教师：}\@cmentor\\\vspace{1pt} \\
+        	%\begin{tabular}{l}
+        		%\zihao{4}{专业：}\@cmajor\\\vspace{4pt} \\
+        		%\zihao{4}{学位申请人：}\@cauthor\\\vspace{4pt} \\
+        		%\zihao{4}{指导教师：}\@cmentor\\\vspace{1pt} \\
+        	%\vspace{3\baselineskip}
+        	
+        	\begin{tabular}{ll}
+        		{\makebox[3cm][s]{\zihao{4}\textbf{专 \hfill 业 \hfill 名 \hfill 称：}}} & \zihao{4}\@cmajor \\ [-1ex] \\
+        		{\makebox[3cm][s]{\zihao{4}\textbf{学 \hfill 位 \hfill 申 \hfill 请 \hfill 人：}}}& \zihao{4}\@cauthor \\ [-1ex] \\
+        		{\makebox[3cm][s]{\zihao{4}\textbf{指 \hfill 导 \hfill 教 \hfill 师：}}} & \zihao{4}\@cmentor \\ 
             \end{tabular}
             }
-        	\vspace{15pt}
-%			\vspace{1\baselineskip}
+        	%\vspace{15pt}
+			\vspace{1.5\baselineskip}
 			
-   		 	\setlength{\@title@width}{6cm}
-   		 	{\zihao{4}\songti{
-   		 	\begin{tabular}{c}
-     				论文答辩委员会主席:\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \\
-     				
-     				%\vspace{12pt}
-     				\underline{\makebox[\@title@width][c]{~}} \\
-     				%\vspace{12pt}
-     				论文答辩委员会成员:\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \\
-     				%\vspace{12pt}
-   
-     				\underline{\makebox[\@title@width][c]{~}} \\
-     				~\\
-     				\underline{\makebox[\@title@width][c]{~}}\\
-     				~\\
-     				\underline{\makebox[\@title@width][c]{~}}\\
-     				~\\
-     				\underline{\makebox[\@title@width][c]{~}}\\
-   				\end{tabular}}	% 不加粗
+%   		 	\setlength{\@title@width}{6cm}
+%   		 	{\zihao{4}\songti{
+%   		 	\begin{tabular}{c}
+%     				论文答辩委员会主席:\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \\
+%     				
+%     				%\vspace{12pt}
+%     				\underline{\makebox[\@title@width][c]{~}} \\
+%     				%\vspace{12pt}
+%     				论文答辩委员会成员:\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \\
+%     				%\vspace{12pt}
+%   
+%     				\underline{\makebox[\@title@width][c]{~}} \\
+%     				~\\
+%     				\underline{\makebox[\@title@width][c]{~}}\\
+%     				~\\
+%     				\underline{\makebox[\@title@width][c]{~}}\\
+%     				~\\
+%     				\underline{\makebox[\@title@width][c]{~}}\\
+%   				\end{tabular}}	% 不加粗
 %				\hspace{24pt}论文答辩委员会主席:
-  		    }
+%  		    }
+  	    \zihao{4}{
+  	    	\begin{tabular}{rr}
+  	    		论文答辩委员会主席：& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
+  	    		&~\\
+  	    		成员：& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
+  	    		&~\\
+  	    		{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
+  	    		&~\\
+  	    		{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
+  	    		&~\\
+  	    		{}& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}
+  	    	\end{tabular}
+  	    }
             \vfill
 
             \zihao{-5}
@@ -285,8 +315,9 @@
 \newcommand\cabstract[1]{\def\@cabstract{#1}}
 \newcommand\eabstract[1]{\def\@eabstract{#1}}
 
-% 中文摘要、关键字标题：5号黑体并加方括号
-% 中文摘要、关键字内容：5号楷体
+% 中文摘要标题：三号黑体
+% 中文摘要、关键字标题：小四号黑体
+% 中文摘要、关键字内容：小四号宋体
 
 \newcommand\makecabstract{
 	\ctexset{
@@ -311,7 +342,7 @@
 			指导教师：\@cmentor
 		\end{tabular}
 		\vspace{\baselineskip}\\ 
-		\zihao{-2}\heiti\textbf{摘要}
+		\zihao{3}\heiti\textbf{摘\hspace{2em}要}
 	\end{center}		
 		\begin{spacing}{1.6}
 			\zihao{-4} \songti\@cabstract
@@ -346,7 +377,7 @@
 			Supervisor: \@ementor
 		\end{tabular}
 		\vspace{\baselineskip}\\
-		\zihao{-2} \textbf{ABSTRACT}
+		\zihao{3} \textbf{ABSTRACT}
 	\end{center}
 		\begin{spacing}{1.6}
 			\zihao{-4} \@eabstract
