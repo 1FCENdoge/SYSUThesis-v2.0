@@ -36,4 +36,4 @@ tlmgr update --self --all
 1. 感谢Donald Ervin Knuth教授发明了`tex`这么好(zhe)用(teng)的工具。
 
 ## 错误反馈以及改进
-希望大家踊跃提出自己的想法，提交pr和issue，一起完善和改进该 $\LaTeX$ 模板， Make **SYSU** Great Again！
+一个人的力量有限，希望大家踊跃提出自己的想法，对于不符合格式要求的内容和部分过于丑陋的代码提交pr和issue，一起完善和改进该 $\LaTeX$ 模板， Make **SYSU** Great Again！
