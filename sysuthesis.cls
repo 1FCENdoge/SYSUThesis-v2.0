@@ -21,6 +21,8 @@
 % 配置英文字体
 \RequirePackage{fontspec}
 \setmainfont{Times New Roman}
+% 解决宋体无法加粗问题（https://zhuanlan.zhihu.com/p/505601359）
+\setCJKmainfont{simsun.ttc}[AutoFakeBold] 
 
 \RequirePackage{fancyhdr}
 \RequirePackage[top=1in, bottom=1in, left=1.25in, right=1.25in, headsep=0.2in, headheight=0.532cm, footskip=0.79cm]{geometry}
@@ -147,8 +149,6 @@
 % 目录中章节标题
 \renewcommand{\cftchapfont}{\zihao{-4}\songti}
 \renewcommand{\cftchappagefont}{\zihao{-4}\songti}
-% \renewcommand{\cftchapfont}{\zihao{4}\heiti}
-% \renewcommand{\cftchappagefont}{\zihao{4}\heiti}
 
 % 目录中其他内容
 \renewcommand{\cftsecfont}{\zihao{-4}\songti}
@@ -178,7 +178,7 @@
 \newtheorem{remark}{{注记}}[chapter]
 \newtheorem{eg}{例}[chapter]
 
-\renewcommand{\proofname}{{\heiti 证明}}
+\renewcommand{\proofname}{{\textbf 证明}}
 \renewcommand{\@biblabel}[1]{[#1]\hfill}
 
 \renewenvironment{proof}[1][\proofname]{\par
@@ -211,56 +211,25 @@
     \begin{titlepage}
         \begin{center}
             \includegraphics[width=10cm]{image/SYSULogo} \\
-            %\songti
             \vspace{\baselineskip}
             \zihao{1}{中山大学硕士学位论文} \\
             \vspace{1\baselineskip}
 
             {\fontsize{12}{10}\selectfont
             \begin{tabular}{l}
-            	%\hfill\zihao{3}\songti\bfseries\@covertitlefirst\hfill\\\vspace{1pt}\\
-            	%\hfill\zihao{3}\songti\textbf{\@covertitlesecond}\hfill\\\vspace{1pt}\\
-            	%\hfill\zihao{3}\songti\textbf{\@covertitlethird}\hfill\\\vspace{20pt}\\
-            	\hfill\zihao{3}\bfseries\@covertitlefirst\hfill\\\vspace{1pt}\\
+            	\hfill\zihao{3}\heiti\@covertitlefirst\hfill\\\vspace{1pt}\\
             	\hfill\zihao{3}\@covertitlesecond\hfill\\\vspace{1pt}\\
             	\hfill\zihao{3}\@covertitlethird\hfill\\\vspace{20pt}\\
             \end{tabular}
-        	%\begin{tabular}{l}
-        		%\zihao{4}{专业：}\@cmajor\\\vspace{4pt} \\
-        		%\zihao{4}{学位申请人：}\@cauthor\\\vspace{4pt} \\
-        		%\zihao{4}{指导教师：}\@cmentor\\\vspace{1pt} \\
-        	%\vspace{3\baselineskip}
         	
         	\begin{tabular}{ll}
-        		{\makebox[3cm][s]{\zihao{4}\textbf{专 \hfill 业 \hfill 名 \hfill 称：}}} & \zihao{4}\@cmajor \\ [-1ex] \\
-        		{\makebox[3cm][s]{\zihao{4}\textbf{学 \hfill 位 \hfill 申 \hfill 请 \hfill 人：}}}& \zihao{4}\@cauthor \\ [-1ex] \\
-        		{\makebox[3cm][s]{\zihao{4}\textbf{指 \hfill 导 \hfill 教 \hfill 师：}}} & \zihao{4}\@cmentor \\ 
+        		{\makebox[3cm][s]{\zihao{4}\heiti{专 \hfill 业 \hfill 名 \hfill 称：}}} & \zihao{4}\@cmajor \\ [-1ex] \\
+        		{\makebox[3cm][s]{\zihao{4}\heiti{学 \hfill 位 \hfill 申 \hfill 请 \hfill 人：}}}& \zihao{4}\@cauthor \\ [-1ex] \\
+        		{\makebox[3cm][s]{\zihao{4}\heiti{指 \hfill 导 \hfill 教 \hfill 师：}}} & \zihao{4}\@cmentor \\ 
             \end{tabular}
             }
-        	%\vspace{15pt}
-			\vspace{1.5\baselineskip}
+			\vspace{\baselineskip}
 			
-%   		 	\setlength{\@title@width}{6cm}
-%   		 	{\zihao{4}\songti{
-%   		 	\begin{tabular}{c}
-%     				论文答辩委员会主席:\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \\
-%     				
-%     				%\vspace{12pt}
-%     				\underline{\makebox[\@title@width][c]{~}} \\
-%     				%\vspace{12pt}
-%     				论文答辩委员会成员:\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \\
-%     				%\vspace{12pt}
-%   
-%     				\underline{\makebox[\@title@width][c]{~}} \\
-%     				~\\
-%     				\underline{\makebox[\@title@width][c]{~}}\\
-%     				~\\
-%     				\underline{\makebox[\@title@width][c]{~}}\\
-%     				~\\
-%     				\underline{\makebox[\@title@width][c]{~}}\\
-%   				\end{tabular}}	% 不加粗
-%				\hspace{24pt}论文答辩委员会主席:
-%  		    }
   	    \zihao{4}{
   	    	\begin{tabular}{rr}
   	    		论文答辩委员会主席：& \raisebox{-1ex}{\underline{\makebox[6cm][c]{}}}\\
@@ -279,10 +248,6 @@
             \zihao{-5}
             {\centering
             	{二〇二二年五月}
-%                \ctexset{today=big}         % 汉字数字形式日期
-%                \today     \\ % 使用最后一次编译的日期, 实现日期的自动化
-                % Date:\hspace{0.5\ccwd} Month\hspace{2\ccwd} Day\hspace{1\ccwd} Year
-%                Date: \etoday % 英文日期自动化
             }
 
         \end{center}
@@ -298,7 +263,6 @@
 \newcommand\makedisclaim{
     \ctexset {
         chapter = {
-%            titleformat = {\zihao{-2}\fangsong\bfseries},
 			titleformat = {\zihao{-2}\heiti},
             beforeskip = {10pt},
             afterskip = {30pt}
@@ -333,9 +297,9 @@
 	\begin{center}
 		\zihao{3}
 		\mbox{ }\\
-		\textbf{论文题目：\@ctitle} 
+		\heiti{论文题目：\@ctitle} 
 		\vspace{\baselineskip}\\
-		\zihao{-3}
+		\zihao{-3}\songti
 		\begin{tabular}{l}
 			专\hspace{2\ccwd}业：\@cmajor \\
 			硕\hspace{0.5\ccwd}士\hspace{0.5\ccwd}生：\@cauthor \\
@@ -349,7 +313,6 @@
 			~\\
 		\end{spacing}
 	\zihao{-4}\textbf{关键词：}\@ckeywords
-		%\paragraph{\zihao{-4}\textbf{关键词：}\@ckeywords}
 }
 
 % 英文摘要、关键字标题：小四号新罗马体(Time New Roman)加粗并加方括号
@@ -422,36 +385,30 @@
             beforeskip = {13pt},
             afterskip = {13pt},
             format = {},
-%            nameformat = {\zihao{-3}\songti\bfseries},
-%            titleformat = {\zihao{-3}\songti\bfseries}
-            nameformat = {\zihao{-3}\heiti},
-            titleformat = {\zihao{-3}\heiti}
+            nameformat = {\zihao{-3}\bfseries},
+            titleformat = {\zihao{-3}\bfseries}
         },
         subsection = {
             %fixskip = true,
             beforeskip = {10pt},
             afterskip = {10pt},
             format = {},
-%            nameformat = {\zihao{-4}\songti\bfseries},
-%            titleformat = {\zihao{-4}\songti\bfseries}
-            nameformat = {\zihao{-4}\heiti},
-            titleformat = {\zihao{-4}\heiti}
+            nameformat = {\zihao{-4}\bfseries},
+            titleformat = {\zihao{-4}\bfseries}
         },
         subsubsection = {
             beforeskip = {10pt},
             afterskip = {10pt},
             format = {},
-%            nameformat = {\zihao{-4}\songti\bfseries},
-%            titleformat = {\zihao{-4}\songti\bfseries}
-            nameformat = {\zihao{-4}\heiti},
-            titleformat = {\zihao{-4}\heiti}
+            nameformat = {\zihao{-4}\bfseries},
+            titleformat = {\zihao{-4}\bfseries}
             % 按照中大规定的格式需要显示成a.b.c.d章，而不是(d)节
             % number = {(\arabic{subsubsection})}
         }
     }
 
-    \zihao{-4}\songti \linespread{1.6}\selectfont
-    %\zihao{-4}\songti \linespread{1.5}\selectfont
+    \zihao{-4} \linespread{1.56}\selectfont
+    % latex中定义为1.56行距，相当于word中1.5倍行距
     \pagestyle{plain}
 }
 
@@ -470,9 +427,7 @@
     \begingroup
         \ctexset {
             chapter = {
-%                aftertitle = {：},
                 format = {\centering},
-%                format = {},
                 titleformat = {\zihao{-2}\heiti}
             }
         }
@@ -531,13 +486,13 @@
         },
         section = {
             format = {\centering},
-            nameformat = {\zihao{-3}\heiti},
-            titleformat = {\zihao{-3}\heiti}
+            nameformat = {\zihao{-3}\bfseries},
+            titleformat = {\zihao{-3}\bfseries}
         },
         subsection = {
             format = {\centering},
-            nameformat = {\zihao{-4}\heiti},
-            titleformat = {\zihao{-4}\heiti}
+            nameformat = {\zihao{-4}\bfseries},
+            titleformat = {\zihao{-4}\bfseries}
         }
     }
 }
