@@ -248,6 +248,8 @@
             \zihao{-5}
             {\centering
             	{二〇二二年五月}
+%            	\ctexset{today=big}         % 汉字数字形式日期
+%            	\today     \\ % 使用最后一次编译的日期, 实现日期的自动化
             }
 
         \end{center}
