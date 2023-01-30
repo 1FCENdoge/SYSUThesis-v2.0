@@ -22,7 +22,7 @@
 \RequirePackage{fontspec}
 \setmainfont{Times New Roman}
 % 解决宋体无法加粗问题（https://zhuanlan.zhihu.com/p/505601359）
-\setCJKmainfont{simsun.ttc}[AutoFakeBold] 
+\setCJKmainfont{SimSun}[AutoFakeBold]
 
 \RequirePackage{fancyhdr}
 \RequirePackage[top=1in, bottom=1in, left=1.25in, right=1.25in, headsep=0.2in, headheight=0.532cm, footskip=0.79cm]{geometry}
