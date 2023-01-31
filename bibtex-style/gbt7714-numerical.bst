@@ -8,9 +8,9 @@
 %% -------------------------------------------------------------------
 %% GB/T 7714 BibTeX Style
 %% https://github.com/zepinglee/gbt7714-bibtex-style
-%% Version: 2022/03/21 v2.1.4
+%% Version: 2022/10/03 v2.1.5
 %% -------------------------------------------------------------------
-%% Copyright (C) 2016--2022 by Zeping Lee <zepinglee AT gmail.com>
+%% Copyright (C) 2016--2023 by Zeping Lee <zepinglee AT gmail.com>
 %% -------------------------------------------------------------------
 %% This file may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3c
@@ -877,7 +877,7 @@ FUNCTION {format.volume}
     { volume is.number
         { entry.lang lang.zh =
             { "第 " volume * " 卷" * }
-            { "volume" volume tie.or.space.connect }
+            { "Vol." volume tie.or.space.connect }
           if$
         }
         { volume }
@@ -892,7 +892,7 @@ FUNCTION {format.number}
     { number is.number
         { entry.lang lang.zh =
             { "第 " number * " 册" * }
-            { "number" number tie.or.space.connect }
+            { "No." number tie.or.space.connect }
           if$
         }
         { number }
@@ -1057,7 +1057,7 @@ FUNCTION {get.journal.title}
 }
 
 FUNCTION {check.arxiv.preprint}
-{ #1 #5 substring$ "l" change.case$ "arxiv" =
+{ #1 #5 substring$ purify$ "l" change.case$ "arxiv" =
     { #1 }
     { #0 }
   if$
@@ -1301,7 +1301,10 @@ FUNCTION {format.year}
     { year extract.before.slash extra.label * }
     { date empty$ not
         { date extract.before.dash extra.label * }
-        { "empty year in " cite$ * warning$
+        { entry.is.electronic not
+            { "empty year in " cite$ * warning$ }
+            'skip$
+          if$
           urldate empty$ not
             { "[" urldate extract.before.dash * extra.label * "]" * }
             { "" }
