@@ -16,7 +16,7 @@ tlmgr update --self --all
 
 ## 项目代码参考
 1. [中山大学LaTeX论文项目模板(非官方)](https://gitlab.com/sysu-gitlab/latex-group/thesis/-/tree/dev)
-1. [中山大学 $\LaTeX$ 论文项目模板](https://github.com/SYSU-SCC/sysu-thesis)
+1. [中山大学LaTeX论文项目模板](https://github.com/SYSU-SCC/sysu-thesis)
 1. [GB/T 7714-2015 BibTeX Style](https://github.com/zepinglee/gbt7714-bibtex-style)（官方宏包）
 1. [biblatex-gb7714-2015: a biblatex style package](https://github.com/hushidong/biblatex-gb7714-2015)
 
