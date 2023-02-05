@@ -24,7 +24,7 @@ tlmgr update --self --all
 1. 感谢[@yangtzech](https://github.com/yangtzech)在本项目正式发布以来一直对本项目的关注和支持，对sysuthesis.cls文件代码进行大量简化和改进并且对gitignore文件添加了许多内容。
 1. 感谢B. CAI对本项目的宣传。
 1. 感谢[@GaëlCHEN](https://github.com/GaelCHEN)为本项目提交代码以及参与本项目的后续维护。
-1. 感谢J. LI、[@Changkun Shao](https://github.com/ShaoChangk)、Y. XIE、Y. YANG同学为本模板提供参考示例。
+1. 感谢J. LI、[@Changkun Shao](https://github.com/ShaoChangk)、[@marc-antoine233](https://github.com/marc-antoine233)、Y. YANG同学为本模板提供参考示例。
 1. 感谢[@Immortalyzy](https://github.com/Immortalyzy)为本项目提供了一定的技术支持。
 
 ## 错误反馈以及改进
