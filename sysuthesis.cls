@@ -56,6 +56,12 @@
 \RequirePackage{changepage}
 \RequirePackage{emptypage}
 \RequirePackage{ulem}
+% 算法/伪代码
+\RequirePackage{algorithm,algorithmic}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+\renewcommand{\algorithmicreturn}{\textbf{返回:}}
 
 % Insert a TRUE blank page which has no header or footer
 \let\origdoublepage\cleardoublepage
