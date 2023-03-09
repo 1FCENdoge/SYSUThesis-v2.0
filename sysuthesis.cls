@@ -176,6 +176,7 @@
 \newtheorem{corollary}{{推论}}[chapter]
 \newtheorem{definition}{{定义}}[chapter]
 \newtheorem{remark}{{注记}}[chapter]
+\newtheorem{assumption}{{假设}}[chapter]
 \newtheorem{eg}{例}[chapter]
 
 \renewcommand{\proofname}{{\textbf 证明}}
