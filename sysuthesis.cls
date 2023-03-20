@@ -263,13 +263,13 @@
 
 
 \newcommand\makedisclaim{
-    \ctexset {
-        chapter = {
-			titleformat = {\zihao{-2}\heiti},
-            beforeskip = {10pt},
-            afterskip = {30pt}
-        }
-    }
+    % \ctexset {
+    %     chapter = {
+	% 		titleformat = {\zihao{-2}\heiti},
+    %         beforeskip = {10pt},
+    %         afterskip = {30pt}
+    %     }
+    % }
     \input{docs/disclaim}
     \thispagestyle{empty}
     \newclearpage
@@ -308,7 +308,7 @@
 			指导教师：\@cmentor
 		\end{tabular}
 		\vspace{\baselineskip}\\ 
-		\zihao{3}\heiti\textbf{摘\hspace{2em}要}
+		\zihao{3}\heiti{摘\hspace{2em}要}
 	\end{center}		
 		\begin{spacing}{1.6}
 			\zihao{-4} \songti\@cabstract
