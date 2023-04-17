@@ -426,7 +426,8 @@
 
 % 参考文献
 % 参考文献引用标记格式：右上角，带方括号
-\RequirePackage[comma,square,super]{natbib}
+% 合并相邻的参考文献
+\RequirePackage[comma,square,super,sort&compress]{natbib}
 % 标题与正文章节标题相同
 % 内容小五号宋体
 \newcommand\makereferences{
