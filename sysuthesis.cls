@@ -290,6 +290,7 @@
 % 中文摘要、关键字内容：小四号宋体
 
 \newcommand\makecabstract{
+    \phantomsection
 	\begin{center}
 		\zihao{3}
 		\mbox{ }\\
@@ -303,18 +304,19 @@
 		\end{tabular}
 		\vspace{\baselineskip}
 		\section*{\zihao{3}\heiti\textbf{摘\hspace{2em}要}}  % issue #4
+        \addcontentsline{toc}{chapter}{摘要}
 	\end{center}		
 		\begin{spacing}{1.6}
 			\zihao{-4} \songti\@cabstract
 			~\\
 		\end{spacing}
 	\zihao{-4}\textbf{关键词：}\@ckeywords
-	\addcontentsline{toc}{chapter}{摘要}
 }
 
 % 英文摘要、关键字标题：小四号新罗马体(Time New Roman)加粗并加方括号
 % 英文摘要、关键字内容：小四号新罗马体(Time New Roman)
 \newcommand\makeeabstract{
+    \phantomsection
 	\begin{center}
 		\zihao{3}
 		\mbox{ }\\
@@ -328,6 +330,7 @@
 		\end{tabular}
 		\vspace{\baselineskip}
 		\section*{\zihao{3}\textbf{ABSTRACT}}  % issue #4
+        \addcontentsline{toc}{chapter}{ABSTRACT}
 	\end{center}
 		\begin{spacing}{1.6}
 			\zihao{-4} \@eabstract
@@ -336,7 +339,6 @@
 	\begin{spacing}{1.6}
 		\noindent\zihao{-4}\textbf{Keywords: }\@ekeywords
 	\end{spacing}
-	\addcontentsline{toc}{chapter}{ABSTRACT}
 }
 
 \newcommand\makeabstract{
