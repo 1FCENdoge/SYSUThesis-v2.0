@@ -308,8 +308,9 @@
 	\end{center}		
 		\begin{spacing}{1.6}
 			\zihao{-4} \songti\@cabstract
-			~\\
+			% ~\\
 		\end{spacing}
+        \vspace{\baselineskip}
 	\zihao{-4}\textbf{关键词：}\@ckeywords
 }
 
@@ -334,11 +335,11 @@
 	\end{center}
 		\begin{spacing}{1.6}
 			\zihao{-4} \@eabstract
-			~\\
+			% ~\\
 		\end{spacing}
-	\begin{spacing}{1.6}
-		\noindent\zihao{-4}\textbf{Keywords: }\@ekeywords
-	\end{spacing}
+        \vspace{\baselineskip}
+        % ~\\
+		\zihao{-4}\textbf{Keywords: }\@ekeywords
 }
 
 \newcommand\makeabstract{
