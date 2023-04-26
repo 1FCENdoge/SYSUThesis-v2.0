@@ -290,7 +290,6 @@
 % 中文摘要、关键字内容：小四号宋体
 
 \newcommand\makecabstract{
-    \phantomsection
 	\begin{center}
 		\zihao{3}
 		\mbox{ }\\
@@ -302,8 +301,9 @@
 			硕\hspace{0.5\ccwd}士\hspace{0.5\ccwd}生：\@cauthor \\
 			指导教师：\@cmentor
 		\end{tabular}
-		\vspace{\baselineskip}
-		\section*{\zihao{3}\heiti\textbf{摘\hspace{2em}要}}  % issue #4
+		\vspace{\baselineskip}\\
+        \phantomsection
+		{\zihao{3}\heiti\textbf{摘\hspace{2em}要}}  % issue #4
         \addcontentsline{toc}{chapter}{摘要}
 	\end{center}		
 		\begin{spacing}{1.6}
@@ -317,7 +317,6 @@
 % 英文摘要、关键字标题：小四号新罗马体(Time New Roman)加粗并加方括号
 % 英文摘要、关键字内容：小四号新罗马体(Time New Roman)
 \newcommand\makeeabstract{
-    \phantomsection
 	\begin{center}
 		\zihao{3}
 		\mbox{ }\\
@@ -329,8 +328,9 @@
 			Name: \@eauthor \\
 			Supervisor: \@ementor
 		\end{tabular}
-		\vspace{\baselineskip}
-		\section*{\zihao{3}\textbf{ABSTRACT}}  % issue #4
+		\vspace{\baselineskip}\\
+        \phantomsection
+		{\zihao{3}\textbf{ABSTRACT}}  % issue #4
         \addcontentsline{toc}{chapter}{ABSTRACT}
 	\end{center}
 		\begin{spacing}{1.6}
