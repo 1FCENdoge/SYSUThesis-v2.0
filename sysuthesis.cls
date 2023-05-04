@@ -432,7 +432,7 @@
 	\fi}
 \def\SYSU@label@publications{攻读硕士学位期间取得的研究成果}
 \newenvironment{publications}[1]
-{\heiti\Nchapter{\SYSU@label@publications}%
+{\Nchapter{\SYSU@label@publications}%
 	\@mkboth{\MakeUppercase\SYSU@label@publications}
 	{\MakeUppercase\SYSU@label@publications}%
 	\list{\@biblabel{\@arabic\c@enumiv}}%
