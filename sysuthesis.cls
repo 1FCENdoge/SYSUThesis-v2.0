@@ -163,8 +163,7 @@
 \renewcommand{\cftafterlottitle}{\hfill}
 \renewcommand{\cftafterloftitle}{\hfill}
 \renewcommand{\cftnodots}{\cftdotsep}     % 使用点指示页数
-\renewcommand{\cftchapleader}{\cftdotfill{0.1}}   % 调整指引线间距
-\renewcommand{\cftsecleader}{\cftdotfill{0.1}}
+\renewcommand{\cftdotsep}{0.1}   % 调整指引线间距
 
 \addtolength{\cftchapnumwidth}{3\ccwd}
 \newcommand\mybold[1]{\textit{\textbf{#1}}}
