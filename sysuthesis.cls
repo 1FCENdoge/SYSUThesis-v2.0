@@ -61,6 +61,14 @@
 \RequirePackage{changepage}
 \RequirePackage{emptypage}
 \RequirePackage{ulem}
+% 算法、伪代码
+\RequirePackage[chapter]{algorithm}
+\RequirePackage{algpseudocode}
+\floatname{algorithm}{算法}  
+\renewcommand{\algorithmicrequire}{\textbf{输入：}}  
+\renewcommand{\algorithmicensure}{\textbf{输出：}} 
+\algrenewcommand\textproc{}
+
 \RequirePackage{tabularx} % for 'tabularx' env. and 'X' col. type
 \RequirePackage{ragged2e} % for \RaggedRight macro
 

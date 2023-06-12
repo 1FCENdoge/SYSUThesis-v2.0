@@ -80,3 +80,28 @@ func()
 也可在行内插入代码片段，例如：Python中重载加法运算符的函数为\pyinline{__add__}，类的标识符为\pyinline{class}。
 此外，还可直接插入代码文件，例如插入\texttt{./code/demo.cpp}的效果为：
 \lstinputlisting[style=sysucpp]{code/demo.cpp}
+
+\section{算法/伪代码的插入}
+插入扩展卡尔曼滤波（Extended Kalman Filter，EKF）伪代码流程如算法 \ref{alg.EKF} 所示。
+\begin{algorithm}[H]
+    \small
+    \caption{EKF 伪代码}
+    \label{alg.EKF}
+    \begin{algorithmic}[htbp]
+		\Require{$\hat{x}_{k - 1}$ $\hat{P}_{k - 1}$ $u_{k - 1}$ $y_k$}
+		\Ensure{$\hat{x}_k$ $\hat{P}_k$}
+        \Statex
+        \Function{EKF}{}
+        \State $\hat{x}_{0} \gets \text{初始化}$
+        \State $\hat{P}_{0} \gets \text{初始化}$
+        \For {$k \gets 1$ to $N$}
+        \State $ \hat{x}_{k}^{-} \gets g(\hat{x}_{k-1},\mu _{k-1})$
+        \State $ P_{k}^{-} \gets A P_{k-1} A^T + Q^w_k $
+        \State $ K_k \gets P_{k}^{-} H^T ( H P_{k}^{-} H^T + R^v_k )^{-1} $
+        \State $ \hat{x}_k \gets \hat{x}_{k}^{-} + K_k\left( y_k - H \hat{x}_{k}^{-} \right) $
+        \State $ \hat{P}_k \gets \left( I - K_k H \right) P_{k}^{-} $
+        \EndFor
+        \State \Return $ \hat{x}_N, P_N $
+        \EndFunction
+    \end{algorithmic}
+\end{algorithm}
