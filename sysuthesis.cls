@@ -335,12 +335,10 @@
 
 \newcommand\makeabstract{
     \setcounter{page}{1}
+    \pagestyle{cAbstract}
     \makecabstract
-    \thispagestyle{cAbstract}
     \newclearpage
-
-    \makeeabstract
-    \thispagestyle{eAbstract}
+    \pagestyle{eAbstract}
     \newclearpage
 }
 \newcommand\maketableofcontents{
