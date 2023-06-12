@@ -342,7 +342,7 @@
     \newclearpage
 }
 \newcommand\maketableofcontents{
-    \pagestyle{plain}
+    \tocloftpagestyle{plain}
     \tableofcontents
     \newclearpage
 }
