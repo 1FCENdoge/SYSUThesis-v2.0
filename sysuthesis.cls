@@ -106,18 +106,18 @@
 \setlist[description]{nosep}
 
 % 页眉、页脚、脚注设定
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0pt}
-\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
 % 采用带圈数字符号代替*号脚注
 \xeCJKsetcharclass{`①}{`⑩}{1}
 % 默认页面页眉页脚样式
 \fancypagestyle{plain}{
     \fancyhf{}
+    \renewcommand{\headrulewidth}{0.5pt}
     % 页码位于页脚居中
     \fancyfoot[C]{\zihao{-5}\thepage}
-    % 居中式页眉，内容为中山大学硕士/博士学位论文
-    \fancyhead[C]{\zihao{-5}中山大学硕士学位论文}
+    % 居中式页眉，奇数页内容为中山大学硕士/博士学位论文
+    \fancyhead[CO]{\zihao{-5}中山大学硕士学位论文}
+    % 居中式页眉，偶数页内容为中文标题
+    \fancyhead[CE]{\zihao{-5} \@ctitle }
 }
 \pagestyle{plain}
 
