@@ -61,8 +61,8 @@
 \RequirePackage{changepage}
 \RequirePackage{emptypage}
 \RequirePackage{ulem}
-\usepackage{tabularx} % for 'tabularx' env. and 'X' col. type
-\usepackage{ragged2e} % for \RaggedRight macro
+\RequirePackage{tabularx} % for 'tabularx' env. and 'X' col. type
+\RequirePackage{ragged2e} % for \RaggedRight macro
 
 % Insert a TRUE blank page which has no header or footer
 \let\origdoublepage\cleardoublepage
