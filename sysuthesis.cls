@@ -56,6 +56,8 @@
 \RequirePackage{changepage}
 \RequirePackage{emptypage}
 \RequirePackage{ulem}
+\usepackage{tabularx} % for 'tabularx' env. and 'X' col. type
+\usepackage{ragged2e} % for \RaggedRight macro
 
 % Insert a TRUE blank page which has no header or footer
 \let\origdoublepage\cleardoublepage
@@ -195,10 +197,6 @@
 % 相关信息宏定义
 \newcommand\ctitle[1]{\def\@ctitle{#1}}
 \newcommand\etitle[1]{\def\@etitle{#1}}
-\newcommand\covertitlefirst[1]{\def\@covertitlefirst{#1}}
-\newcommand\covertitlesecond[1]{\def\@covertitlesecond{#1}}
-\newcommand\covertitlethird[1]{\def\@covertitlethird{#1}}
-\newcommand\covertitleforth[1]{\def\@covertitleforth{#1}}
 \newcommand\cauthor[1]{\def\@cauthor{#1}} % 默认中文名为封面作者名字
 \newcommand\eauthor[1]{\def\@eauthor{#1}}
 \newcommand\cmajor[1]{\def\@cmajor{#1}}
@@ -216,16 +214,13 @@
             \zihao{1}{中山大学硕士学位论文} \\
             \vspace{1\baselineskip}
 
+            % 参考：https://tex.stackexchange.com/a/324204/268488，https://tex.stackexchange.com/a/67582/268488
             {\fontsize{12}{10}\selectfont
-            \begin{tabular}{l}
-            	\hfill\zihao{3}\heiti\@covertitlefirst\hfill \\ [-1ex] \\
-            	\hfill\zihao{3}\heiti\@covertitlesecond\hfill \\ [-1ex] \\
-            	\hfill\zihao{3}\heiti\@covertitlethird\hfill\\\vspace{20pt}\\
-            	% 若需要两行中文标题及两行英文标题，则注释掉上面一行，启用下面两行（issue #5）            	
-%            	\hfill\zihao{3}\heiti\@covertitlethird\hfill \\ [-1ex] \\
-%            	\hfill\zihao{3}\heiti\@covertitleforth\hfill\\\vspace{20pt}\\
-            \end{tabular}
-        	
+            \begin{tabularx}{\textwidth}{>{\centering\arraybackslash\hyphenpenalty=10000\exhyphenpenalty=10000}X}
+                \zihao{3}\heiti\@ctitle\\\vspace{1pt}\\
+                \zihao{3}\@etitle\\\vspace{20pt}\\
+            \end{tabularx}
+
         	\begin{tabular}{ll}
         		{\makebox[3cm][s]{\zihao{4}\heiti{专 \hfill 业 \hfill 名 \hfill 称：}}} & \zihao{4}\@cmajor \\ [-1ex] \\
         		{\makebox[3cm][s]{\zihao{4}\heiti{学 \hfill 位 \hfill 申 \hfill 请 \hfill 人：}}}& \zihao{4}\@cauthor \\ [-1ex] \\
