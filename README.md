@@ -4,6 +4,10 @@
 ## 注意事项
 * 本模板现可用于overleaf，建议直接在本页面下载.zip压缩文件，上传至overleaf，选择xelatex编译器后编译，即可得到pdf文件。若需要进行本地编译，可阅读第一章中的**快速上手**部分。
 
+## docker使用
+
+docker使用部分见 [docker README](./docker/README.md)
+
 ## 相关规范
 [中山大学研究生学位论文格式要求](http://graduate.sysu.edu.cn/rules)
 
