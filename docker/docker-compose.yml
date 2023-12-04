@@ -1,0 +1,15 @@
+version: "3.9"
+name: texlive-stack
+services:
+  texlive:
+    image: marcantoine153/texlive-full:ssh
+    container_name: $container_name
+    stdin_open: true
+    tty: true
+    restart: always
+    working_dir: /home/${username}/workspace
+    volumes:
+      - ./volume/.ssh:/home/${username}/.ssh
+      - ./volume/workspace:/home/${username}/workspace
+      - ${startup_path}:/home/${username}/startup.sh
+      - ${vscode_path}:/home/${username}/.vscode-server/

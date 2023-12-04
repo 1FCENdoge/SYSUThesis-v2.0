@@ -1,0 +1,47 @@
+FROM marcantoine153/texlive-full:base
+
+USER root
+
+# install software
+RUN <<EOF
+apt-get update -q
+apt-get install -y --no-install-recommends openssh-server curl sudo python3 python3-pip git
+pip3 install ipykernel ipywidgets matplotlib numpy
+apt-get clean -y
+rm -rf /var/lib/apt/lists/*
+EOF
+
+ARG UID
+ARG GID
+ARG username
+
+# use the GID and UID of the current user
+RUN <<EOF
+groupadd -g $GID $username
+useradd -u $UID -g $GID -m $username
+usermod -aG sudo $username
+echo "$username ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+# setup ssh config
+cat >>/etc/ssh/sshd_config <<EOL
+PermitRootLogin no
+PubkeyAuthentication yes
+PasswordAuthentication no
+EOL
+EOF
+
+USER $username
+
+# set .ssh directory mode to 700
+RUN <<EOF
+mkdir -m 700 /home/${username}/.ssh
+EOF
+
+VOLUME /home/${username}/.ssh
+VOLUME /home/${username}/workspace
+VOLUME /home/${username}/startup.sh
+VOLUME /home/${username}/.vscode-server
+WORKDIR /home/${username}/workspace
+
+CMD sudo service ssh start &&\
+    /bin/bash /home/user/startup.sh &&\
+    bash

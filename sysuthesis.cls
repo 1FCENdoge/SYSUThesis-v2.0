@@ -116,7 +116,7 @@
 
 % 页眉、页脚、脚注设定
 % 采用带圈数字符号代替*号脚注
-\xeCJKsetcharclass{`①}{`⑩}{1}
+% \xeCJKsetcharclass{`①}{`⑩}{1}
 % 默认页面页眉页脚样式
 \fancypagestyle{plain}{
     \fancyhf{}
