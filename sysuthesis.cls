@@ -116,6 +116,7 @@
 
 % 页眉、页脚、脚注设定
 % 采用带圈数字符号代替*号脚注
+% 正式的论文中一般很少出现脚注，若需要进行脚注，则解除下一行的注释
 % \xeCJKsetcharclass{`①}{`⑩}{1}
 % 默认页面页眉页脚样式
 \fancypagestyle{plain}{
@@ -342,12 +343,14 @@
 }
 
 \newcommand\makeabstract{
-    \setcounter{page}{1}
-    \pagestyle{cAbstract}
-    \makecabstract
-    \newclearpage
-    \pagestyle{eAbstract}
-    \newclearpage
+	\setcounter{page}{1}
+	\makecabstract
+	\thispagestyle{cAbstract}
+	\newclearpage
+	
+	\makeeabstract
+	\thispagestyle{eAbstract}
+	\newclearpage
 }
 \newcommand\maketableofcontents{
     \tocloftpagestyle{plain}
