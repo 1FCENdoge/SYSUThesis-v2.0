@@ -1741,7 +1741,8 @@
     July\or August\or September\or October\or November\or December%
   \fi
 }
-\newcommand\ustc@date@format@zh@short[3]{\number#1 年 \number#2 月}
+\newcommand\ustc@date@format@zh@short[3]{\zhdigits{#1}年 \zhnumber{#2}月}
+% \newcommand\ustc@date@format@zh@short[3]{\number#1 年 \number#2 月}
 \newcommand\ustc@date@format@en[3]{\ustc@date@month{#2} \number#3, #1}
 \newcommand\ustc@date@zh@small{\ustc@format@date{\ustc@date@format@zh@small}{\ustc@date}}
 \newcommand\ustc@date@zh@big{\ustc@format@date{\ustc@date@format@zh@big}{\ustc@date}}
@@ -1898,9 +1899,8 @@
 
             \zihao{-5}
             {\centering
-             \ustc@date@zh@big
-                % {二〇二二年五月}
-				% 使用全中文年月，封面会更正式
+             \ustc@date@zh@short
+				    % 使用全中文年月，封面会更正式
             }
     % \ifustc@degree@type@academic
     %   \vskip 2.0cm%
@@ -2228,19 +2228,9 @@
 % \subsection{原创性声明}
 
 % 定义原创性声明
-\newcommand\ustc@originality{%
-  本人声明所呈交的学位论文，是本人在导师指导下进行研究工作所取得的成果。%
-  除已特别加以标注和致谢的地方外，论文中不包含任何他人已经发表或撰写过的%
-  研究成果。%
-  与我一同工作的同志对本研究所做的贡献均已在论文中作了明确的说明。}
-\newcommand\ustc@authorization{%
-  作为申请学位的条件之一，学位论文著作权拥有者授权中国科学技术大学拥有%
-  学位论文的部分使用权，%
-  即：学校有权按有关规定向国家有关部门或机构送交论文的复印件和电子版，%
-  允许论文被查阅和借阅，可以将学位论文编入《中国学位论文全文数据库》等%
-  有关数据库进行检索，可以采用影印、缩印或扫描等复制手段保存、汇编学位论文。%
-  本人提交的电子文档的内容和纸质论文的内容相一致。\par
-  控阅的学位论文在解密后也遵守此规定。}
+\newcommand\ustc@originality{本人郑重声明：所呈交的学位论文，是本人在导师的指导下，独立进行研究工作所取得的成果。除文中已经注明引用的内容外，本论文不包含任何其他个人或集体已经发表或撰写过的作品成果。对本文的研究作出重要贡献的个人和集体，均已在文中以明确方式标明。本人完全意识到本声明的法律结果由本人承担。}
+\newcommand\ustc@authorization{本人完全了解中山大学有关保留、使用学位论文的规定，即：学校有权保留学位论文并向国家主管部门或其指定机构送交论文的电子版和纸质版；有权将学位论文用于非赢利目的的少量复制并允许论文进入学校图书馆、院系资料室被查阅；有权将学位论文的内容编入有关数据库进行检索；可以采用复印、缩印或其他方法保存学位论文；可以为建立了馆际合作关系的兄弟高校用户提供文献传递服务和交换服务。}
+\newcommand\sysu@integrity{本人郑重声明：所呈交的毕业论文（设计），是本人在导师的指导下，独立进行研究工作所取得的成果。除文中已经注明引用的内容外，本论文（设计）不包含任何其他个人或集体已经发表或撰写过的作品成果。对本论文（设计）的研究做出重要贡献的个人和集体，均已在文中以明确方式标明。本论文（设计）的知识产权归属于培养单位。本人完全意识到本声明的法律结果由本人承担。}
   %
   % 生成空的下划线
 \newcommand\ustc@underline[2][3.2cm]{\underline{\hb@xt@ #1{\hss#2\hss}}}
@@ -2250,13 +2240,13 @@
   \raisebox{-0.2ex}{\hspace{0.1em}$\checkmark$}%
 }
 
-\newcommand\copyrightpage{%
+\newcommand\copyrightpage@graduate{%
   \begin{titlepage}%
-    \ustc@pdfbookmark{原创性和授权使用声明}%
-    \null
-    \vskip 0.3cm%
+    % \ustc@pdfbookmark{原创性和授权使用声明}%
+    % \null
+    % \vskip 0.3cm%
     {\centering\sffamily\fontsize{16bp}{32bp}\selectfont
-      中国科学技术大学学位论文原创性声明\par}%
+      论文原创性声明\par}%
     \vskip 0.7cm%
     \ustc@originality\par
     \vskip 1.3cm%
@@ -2264,7 +2254,7 @@
     签字日期：\ustc@underline{}\par
     \vskip 1.9cm%
     {\centering\sffamily\fontsize{16bp}{32bp}\selectfont
-      中国科学技术大学学位论文授权使用声明\par}%
+      学位论文使用授权声明\par}%
     \vskip 0.7cm%
     \ustc@authorization\par
     \vskip 0.6cm%
@@ -2289,11 +2279,37 @@
     \fi
   \end{titlepage}%
 }
-\ifustc@degree@bachelor
-  \let\copyrightpage\relax
-\fi
+% \ifustc@degree@bachelor
+%   \let\copyrightpage\relax
+\newcommand\copyrightpage@bachelor{
+  \begin{titlepage}
+    {\centering\sffamily\fontsize{16bp}{32bp}\selectfont 学术诚信声明\par}%
+    \vskip 0.7cm%
+    \sysu@integrity\par
+    \vskip 1.3cm%
+    \begin{flushright}
+      \makebox[2.1cm][s]{作者签名：} \makebox[5cm]{\hspace{1cm}} \\
+      \vspace{\baselineskip}
+      \makebox[2.1cm][s]{日期：} \makebox[5cm]{\hspace{1cm}年\hspace{1cm}月\hspace{1cm}日} \\
+    \end{flushright}
+  \end{titlepage}
+}
+% \fi
 % Reserved for compatibility until 2020-07-01.
-\let\makestatement\copyrightpage
+% \let\makestatement\copyrightpage
+\newcommand\copyrightpage{%
+  \newgeometry{margin=2.54cm}%
+  \pagenumbering{Alph}%
+  \pagestyle{empty}%
+  \ifustc@degree@graduate
+    \copyrightpage@graduate
+  \else
+    \copyrightpage@bachelor
+  \fi
+  \cleardoublepage
+  \restoregeometry
+  \pagestyle{plain}%
+}
 
 
 % \subsection{章节标题}

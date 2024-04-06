@@ -1,2 +1,2 @@
-# SYSUThesis-2.0
+# SYSUThesis
 中山大学学位论文LaTeX模板
