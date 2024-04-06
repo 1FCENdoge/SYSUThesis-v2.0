@@ -1,47 +1,43 @@
-% 作者：1FCENdoge
-%%
-\documentclass{sysuthesis}
-\usepackage{sysucode}  % 在论文中使用代码
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
 
-\input{docs/info}     % 论文相关信息
-\input{docs/abstract}     % 摘要内容
+\documentclass[degree=bachelor]{ustcthesis}
+% degree      = doctor | master | bachelor
+% degree-type = academic | professional
+% language    = chinese | english
+% fontset     = windows | mac | ubuntu | fandol
+
+% 加载宏包、全部的配置
+\input{ustcsetup.tex}
+
+
 \begin{document}
-% 论文前置部分
+
+\maketitle
+\copyrightpage
+
 \frontmatter
-\pagenumbering{Roman}
-\maketitle    % 封面
-% 定稿打印的论文需在扉页、学术诚信声明后添加空白页以保证这两部分内容各自独占一张纸，同时根据情况添加空白页以保证正文第一页为奇数页面，送盲审论文则可以不用添加空白页。
-% 双数页面为空白页
-\cleardoublepage
-\makedisclaim    % 学术诚信声明
-\cleardoublepage
-\makeabstract       % 中英文摘要
-\maketableofcontents        % 目录
-\makelistoffiguretable % 图片与表格目录
-\cleardoublepage
-\include{docs/notation}
-\cleardoublepage
+\input{chapters/abstract.tex}
+\tableofcontents
+% \listoffigures
+% \listoftables
+\input{chapters/notation.tex}
 
-% 论文主体部分
 \mainmatter
-% 正文
-\include{docs/chap01}
-\include{docs/chap02}
-\include{docs/chap03}
+\input{chapters/intro.tex}
+\input{chapters/floats.tex}
+\input{chapters/math.tex}
+\input{chapters/citations.tex}
 
+\bibliography{bib/ustc}  % 参考文献使用 BibTeX 编译
+% \printbibliography       % 参考文献使用 BibLaTeX 编译
 
-% 附录部分
+\appendix
+\input{chapters/complementary.tex}
+
 \backmatter
-% 参考文献。因不需要纳入章节目录，故放入附录部分
-% 实际上参考文献是属于论文主体部分
-\makereferences
-% 发表的论文与研究成果
-\include{docs/publications}
-% 附录
-\begin{appendix}
-    \include{docs/appendix1}
-\end{appendix}
-% 致谢
-% 送盲审的论文不要添加此部分
-\include{docs/ack}
+\input{chapters/acknowledgements.tex}
+\input{chapters/publications.tex}
+
 \end{document}

@@ -1,30 +1,53 @@
-src = main
+MAIN = main
+NAME = ustcthesis
+CLSFILES = $(NAME).cls
+BSTFILES = $(NAME)-numerical.bst $(NAME)-authoryear.bst $(NAME)-bachelor.bst
 
-pdf: clean main.tex reference.bib
-	xelatex $(src)
-	bibtex $(src)
-	xelatex $(src)
-	xelatex $(src)
+SHELL = bash
+LATEXMK = latexmk -xelatex
+VERSION = $(shell cat $(NAME).cls | egrep -o "\\ustcthesisversion{v[0-9.]+" \
+	  | egrep -o "v[0-9.]+")
+TEXMF = $(shell kpsewhich --var-value TEXMFHOME)
 
-show:
-	xdg-open $(src).pdf
+.PHONY : main cls doc test save clean all install distclean zip FORCE_MAKE
 
-clean:
-	-@rm -rf \
-		*~ \
-		*.aux \
-		*.bbl \
-		*.blg \
-		*.dvi \
-		*.ent \
-		*.loa \
-		*.lof \
-		*.lot \
-		*.toc \
-		*.log \
-		*.out \
-		.fuse* \
-		*.run.xml \
-		*.bcf
-	-@find . -name *.aux -exec rm {} \;
+main : $(MAIN).pdf
 
+all : main doc
+
+cls : $(CLSFILES) $(BSTFILES)
+
+doc : $(NAME)-doc.pdf
+
+$(MAIN).pdf : $(MAIN).tex $(CLSFILES) $(BSTFILES) FORCE_MAKE
+	$(LATEXMK) $<
+
+$(NAME)-doc.pdf : $(NAME)-doc.tex FORCE_MAKE
+	$(LATEXMK) $<
+
+test:
+	l3build check
+
+save:
+	bash test/save.sh
+
+clean : FORCE_MAKE
+	$(LATEXMK) -c $(MAIN).tex $(NAME)-doc.tex
+
+cleanall :
+	$(LATEXMK) -C $(MAIN).tex $(NAME)-doc.tex
+
+install : cls doc
+	mkdir -p $(TEXMF)/{doc,source,tex}/latex/$(NAME)
+	mkdir -p $(TEXMF)/bibtex/bst/$(NAME)
+	cp $(BSTFILES) $(TEXMF)/bibtex/bst/$(NAME)
+	cp $(NAME).pdf $(TEXMF)/doc/latex/$(NAME)
+	cp $(CLSFILES) $(TEXMF)/tex/latex/$(NAME)
+
+zip : main doc
+	ln -sf . $(NAME)
+	zip -r ../$(NAME)-$(VERSION).zip $(NAME)/{*.md,LICENSE,\
+	$(NAME)-doc.tex,$(NAME)-doc.pdf,$(NAME).cls,*.bst,*.bbx,*.cbx,figures,\
+	$(MAIN).tex,ustcsetup.tex,chapters,bib,$(MAIN).pdf,\
+	latexmkrc,Makefile}
+	rm $(NAME)

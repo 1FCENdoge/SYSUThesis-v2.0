@@ -1,2 +1,0 @@
-tlmgr option repository http://mirrors.aliyun.com/CTAN/systems/texlive/tlnet/
-tlmgr update --self --all

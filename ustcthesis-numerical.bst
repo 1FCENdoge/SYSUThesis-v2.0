@@ -1,16 +1,16 @@
 %%
-%% This is file `gbt7714-numerical.bst',
+%% This is file `variants/ustc/ustcthesis-numerical.bst',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% gbt7714.dtx  (with options: `2015,numerical')
+%% gbt7714.dtx  (with options: `2015,ustc,numerical')
 %% -------------------------------------------------------------------
 %% GB/T 7714 BibTeX Style
 %% https://github.com/zepinglee/gbt7714-bibtex-style
-%% Version: 2024/03/08 v2.1.6
+%% Version: 2022/10/03 v2.1.5
 %% -------------------------------------------------------------------
-%% Copyright (C) 2016--2024 by Zeping Lee <zepinglee AT gmail.com>
+%% Copyright (C) 2016--2023 by Zeping Lee <zepinglee AT gmail.com>
 %% -------------------------------------------------------------------
 %% This file may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3c
@@ -38,13 +38,12 @@ INTEGERS {
   space.before.mark
   show.medium.type
   short.journal
+  journal.strip.periods
   italic.journal
-  link.journal
   bold.journal.volume
   show.missing.address.publisher
   space.before.pages
   only.start.page
-  wave.dash.in.pages
   show.urldate
   show.url
   show.doi
@@ -56,6 +55,8 @@ INTEGERS {
 
 STRINGS {
   component.part.label
+  page.range.delimiter.zh
+  page.range.delimiter.en
 }
 
 FUNCTION {load.config}
@@ -72,19 +73,20 @@ FUNCTION {load.config}
   #1 'sentence.case.title :=
   #0 'link.title :=
   #1 'title.in.journal :=
-  #0 'show.patent.country :=
+  #1 'show.patent.country :=
   #1 'show.mark :=
   #0 'space.before.mark :=
   #1 'show.medium.type :=
   "slash" 'component.part.label :=
   #0 'short.journal :=
+  #1 'journal.strip.periods :=
   #0 'italic.journal :=
-  #0 'link.journal :=
   #0 'bold.journal.volume :=
   #0 'show.missing.address.publisher :=
   #1 'space.before.pages :=
   #0 'only.start.page :=
-  #0 'wave.dash.in.pages :=
+  "-" 'page.range.delimiter.zh :=
+  "-" 'page.range.delimiter.en :=
   #1 'show.urldate :=
   #1 'show.url :=
   #1 'show.doi :=
@@ -737,7 +739,7 @@ FUNCTION {editor.full}
 
 FUNCTION {make.full.names}
 { type$ "book" =
-  type$ "inbook" = booktitle empty$ not and
+  type$ "inbook" =
   or
     'author.editor.full
     { type$ "collection" =
@@ -996,7 +998,7 @@ FUNCTION {format.series.vol.num.booktitle}
   format.btitle
 }
 
-FUNCTION {remove.period}
+FUNCTION {strip.periods}
 { 't :=
   "" 's :=
     { t empty$ not }
@@ -1012,8 +1014,7 @@ FUNCTION {remove.period}
 }
 
 FUNCTION {abbreviate}
-{ remove.period
-  't :=
+{ 't :=
   t "l" change.case$ 's :=
   ""
   s "physical review letters" =
@@ -1056,6 +1057,10 @@ FUNCTION {get.journal.title}
       if$
     }
   if$
+  journal.strip.periods
+    'strip.periods
+    'skip$
+  if$
 }
 
 FUNCTION {check.arxiv.preprint}
@@ -1070,10 +1075,6 @@ FUNCTION {format.journal}
   duplicate$ empty$ not
     { italic.journal entry.lang lang.en = and
         'emphasize
-        'skip$
-      if$
-      link.journal
-        'add.link
         'skip$
       if$
     }
@@ -1388,9 +1389,9 @@ FUNCTION {hyphenate}
   ""
     { t empty$ not }
     { t #1 #1 substring$ "-" =
-        { wave.dash.in.pages
-            { "～" * }
-            { "-" * }
+        { entry.lang lang.zh =
+            { page.range.delimiter.zh * }
+            { page.range.delimiter.en * }
           if$
             { t #1 #1 substring$ "-" = }
             { t #2 global.max$ substring$ 't := }
@@ -1656,7 +1657,7 @@ FUNCTION {output.translation}
 { show.english.translation entry.lang lang.zh = and
     { translation empty$ not
         { translation }
-        { "[English translation missing!]" }
+        { "" }
       if$
       " (in Chinese)" * output
       write$
@@ -1972,10 +1973,6 @@ FUNCTION {preprint}
   format.urldate "" output.after
   output.eprint
   output.url
-  show.preprint not eprint empty$ or
-    'output.doi
-    'skip$
-  if$
   new.block
   format.note output
   fin.entry
@@ -2040,12 +2037,7 @@ FUNCTION {dataset}
   electronic
 }
 
-FUNCTION {inbook} {
-  booktitle empty$
-    'book
-    'incollection
-  if$
-}
+FUNCTION {inbook} { book }
 
 FUNCTION {inproceedings}
 { "C" set.entry.mark
@@ -2286,7 +2278,7 @@ FUNCTION {editor.key.organization.label}
 FUNCTION {calc.short.authors}
 { "" 'short.label :=
   type$ "book" =
-  type$ "inbook" = booktitle empty$ not and
+  type$ "inbook" =
   or
     'author.editor.key.label
     { type$ "collection" =
