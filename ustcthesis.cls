@@ -1854,9 +1854,10 @@
     \centering
     \includegraphics[width=11cm]{figures/SYSULogo} \\
             \vspace{\baselineskip}
-            {\sffamily\fontsize{26bp}{26bp}\selectfont
+            {\songti\fontsize{26bp}{38bp}\selectfont
             \ustc@thesis@name\par}%
-            \vspace{1\baselineskip}
+            % \vspace{1\baselineskip}
+            \vspace{38bp}
     % \ustc@pdfbookmark{封面}%
     % \centering
     % \parbox[t][0.6cm][t]{\textwidth}{%
